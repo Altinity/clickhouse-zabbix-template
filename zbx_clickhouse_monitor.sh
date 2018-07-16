@@ -9,17 +9,14 @@
 
 # Default host where ClickHouse is expected to be available
 # You may want to change this for your installation
-CH_HOST="ch.example.com"
+CH_HOST="${2:-localhost}"
 
 ##
 ## Write usage info
 ##
 function usage()
 {
-	echo "
-	Usage: $(basename "$0") SomeARG
-	Example: $(basename "$0") Query
-"
+	echo "Usage: $(basename "$0") Command [ClickHouse Host to Connect]"
 }
 
 # Command to execute
