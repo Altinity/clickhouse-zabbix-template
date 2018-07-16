@@ -11,6 +11,7 @@ How to set up server with Zabbix agent:
   where:
   * `/PATH/TO/params.sh` depends on where you've cloned this repo.
   * `HOST_WHERE_CH_IS_RUNNING` is optional parameter, in case none specified `localhost` would be used
+
 And finally
   * Import `zbx_clickhouse_template.xml` in zabbix (**zabbix -> Configuration -> Templates -> Import**).
 
