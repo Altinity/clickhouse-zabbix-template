@@ -68,30 +68,6 @@ function run_ch_process_command()
 }
 
 case "$ITEM" in
-	Query			| \
-	MemoryTracking		| \
-	HTTPConnection		| \
-	TCPConnection		| \
-	ZooKeeperWatch		| \
-	Read			| \
-	Write			| \
-	SelectedParts		| \
-	InsertQuery		| \
-	InsertedRows		| \
-	InsertedBytes		| \
-	SelectQuery		| \
-	MergedRows		| \
-	MergedUncompressedBytes	| \
-	DelayedInserts		| \
-	MaxPartCountForPartition| \
-	ReplicasSumQueueSize	| \
-	ReplicasMaxAbsoluteDelay| \
-	Uptime			| \
-	InsertedBytes		| \
-	ReadCompressedBytes	)
-		run_ch_metric_command "$ITEM"
-		;;
-
 	DiskUsage)
 		du -sb "$CH_PATH" | awk '{print $1}'
 		;;
@@ -103,6 +79,31 @@ case "$ITEM" in
 	LongestRunningQuery)
 		run_ch_process_command | sort | tail -1
 		;;
+
+	DelayedInserts		| \
+	HTTPConnection		| \
+	InsertedBytes		| \
+	InsertedBytes		| \
+	InsertedRows		| \
+	InsertQuery		| \
+	MaxPartCountForPartition| \
+	MemoryTracking		| \
+	MergedRows		| \
+	MergedUncompressedBytes	| \
+	Query			| \
+	Read			| \
+	ReadCompressedBytes	| \
+	ReplicasMaxAbsoluteDelay| \
+	ReplicasSumQueueSize	| \
+	SelectedParts		| \
+	SelectQuery		| \
+	TCPConnection		| \
+	Uptime			| \
+	Write			| \
+	ZooKeeperWatch		)
+		run_ch_metric_command "$ITEM"
+		;;
+
 	*)
 		echo "Unknown argument '$ITEM'. Please check command to run"
 		exit 1
