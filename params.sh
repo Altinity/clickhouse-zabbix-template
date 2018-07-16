@@ -58,7 +58,7 @@ function run_ch_metric_command()
 }
 
 ##
-## fetch processes info from ClickHouse
+## Fetch processes info from ClickHouse
 ##
 function run_ch_process_command()
 {
