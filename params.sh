@@ -1,15 +1,27 @@
 #!/bin/sh
 
-ITEM="$1"
-CH_PATH="$(xmllint --xpath 'string(/yandex/path)' /etc/clickhouse-server/config.xml)"
-if [ "$?" -ne 0 ];then echo "Something goes wrong"; exit 1 ;fi 
 CH_HOST="ch.example.com"
-usage() {
-echo "
-Usage: $(basename "$0") SomeARG
-Example: $(basename "$0") Query
+
+ITEM="$1"
+
+CH_PATH="$(xmllint --xpath 'string(/yandex/path)' /etc/clickhouse-server/config.xml)"
+
+if [ "$?" -ne 0 ]; then
+	echo "Something went wrong with parsing ClickHouse config. Is xmllist installed? Is ClickHouse config available?"
+	exit 1
+fi 
+
+
+##
+##
+##
+function usage()
+{
+	echo "
+	Usage: $(basename "$0") SomeARG
+	Example: $(basename "$0") Query
 "
-exit 1
+	exit 1
 }
 
 if [ -z "$ITEM" ]; then
