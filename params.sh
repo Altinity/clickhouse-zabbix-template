@@ -1,98 +1,112 @@
 #!/bin/sh
+#
+# Yandex ClickHouse Zabbix template
+#
+# Copyright (C) Ivinco Ltd
+# Copyright (C) Altinity Ltd
 
-ITEM="$1"
-CH_PATH="$(xmllint --xpath 'string(/yandex/path)' /etc/clickhouse-server/config.xml)"
-if [ "$?" -ne 0 ];then echo "Something goes wrong"; exit 1 ;fi 
+
+
+# Default host where ClickHouse is expected to be available
+# You may want to change this for your installation
 CH_HOST="ch.example.com"
-usage() {
-echo "
-Usage: $(basename "$0") SomeARG
-Example: $(basename "$0") Query
+
+##
+## Write usage info
+##
+function usage()
+{
+	echo "
+	Usage: $(basename "$0") SomeARG
+	Example: $(basename "$0") Query
 "
-exit 1
 }
 
+# Command to execute
+ITEM="$1"
 if [ -z "$ITEM" ]; then
-	echo "There is no argument"
+	echo "Provide command to run"
 	usage
+	exit 1
 fi
 
+# Ensure xmllint is available
+xmllint="$(which xmllint)"
+if [ "$?" -ne 0 ]; then
+	echo "Looks like xmllint is not available. Please install it."
+	exit 1
+fi
+
+# Extract ClickHouse data directory
+# Usually it is /var/lib/clickhouse
+CH_PATH="$(xmllint --xpath 'string(/yandex/path)' /etc/clickhouse-server/config.xml)"
+if [ "$?" -ne 0 ]; then
+	echo "Something went wrong with parsing ClickHouse config. Is xmllist installed? Is ClickHouse config available?"
+	exit 1
+fi 
+
+##
+## Fetch metric by name from ClickHouse
+##
+function run_ch_metric_command()
+{
+	# Metric name to fetch
+	METRIC=$1
+	DATABASE="system"
+	SQL="SELECT value FROM metrics WHERE metric = '$METRIC'"
+	/usr/bin/clickhouse-client -h "$CH_HOST" -d "$DATABASE" -q "$SQL"
+}
+
+##
+## fetch processes info from ClickHouse
+##
+function run_ch_process_command()
+{
+	DATABASE="system"
+	SQL="SELECT elapsed FROM processes"
+	/usr/bin/clickhouse-client -h "$CH_HOST" -d "$DATABASE" -q "$SQL"
+}
+
 case "$ITEM" in
-	Query)
-		 /usr/bin/clickhouse-client  -h $CH_HOST -d system -q "select value from metrics where metric = 'Query'"	
-	;;
-	MemoryTracking)
-		 /usr/bin/clickhouse-client  -h $CH_HOST -d system -q "select value from metrics where metric = 'MemoryTracking'"	
-	;;
-	HTTPConnection)
-		 /usr/bin/clickhouse-client  -h $CH_HOST -d system -q "select value from metrics where metric = 'HTTPConnection'"	
-	;;
-	TCPConnection)
-		 /usr/bin/clickhouse-client  -h $CH_HOST -d system -q "select value from metrics where metric = 'TCPConnection'"	
-	;;
-	ZooKeeperWatch)
-		 /usr/bin/clickhouse-client  -h $CH_HOST -d system -q "select value from metrics where metric = 'ZooKeeperWatch'"	
-	;;
-	Read)
-		 /usr/bin/clickhouse-client  -h $CH_HOST -d system -q "select value from metrics where metric = 'Read'"	
-	;;
-	Write)
-		 /usr/bin/clickhouse-client  -h $CH_HOST -d system -q "select value from metrics where metric = 'Write'"	
-	;;
-	SelectedParts)
-		 /usr/bin/clickhouse-client  -h $CH_HOST -d system -q "select value from events where event = 'SelectedParts'"	
-	;;
-	InsertQuery)
-		 /usr/bin/clickhouse-client  -h $CH_HOST -d system -q "select value from events where event = 'InsertQuery'"	
-	;;
-	InsertedRows)
-		 /usr/bin/clickhouse-client  -h $CH_HOST -d system -q "select value from events where event = 'InsertedRows'"	
-	;;
-	InsertedBytes)
-		 /usr/bin/clickhouse-client  -h $CH_HOST -d system -q "select value from events where event = 'InsertedBytes'"	
-	;;
-	SelectQuery)
-		 /usr/bin/clickhouse-client  -h $CH_HOST -d system -q "select value from events where event = 'SelectQuery'"	
-	;;
-	MergedRows)
-		 /usr/bin/clickhouse-client  -h $CH_HOST -d system -q "select value from events where event = 'MergedRows'"	
-	;;
-	MergedUncompressedBytes)
-		 /usr/bin/clickhouse-client  -h $CH_HOST -d system -q "select value from events where event = 'MergedUncompressedBytes'"	
-	;;
-	DelayedInserts)
-		 /usr/bin/clickhouse-client  -h $CH_HOST -d system -q "select value from metrics where metric = 'DelayedInserts'"	
-	;;
-	MaxPartCountForPartition)
-		 /usr/bin/clickhouse-client  -h $CH_HOST -d system -q "select value from asynchronous_metrics where metric = 'MaxPartCountForPartition'"	
-	;;
-	ReplicasSumQueueSize)
-		 /usr/bin/clickhouse-client  -h $CH_HOST -d system -q "select value from asynchronous_metrics where metric = 'ReplicasSumQueueSize'"	
-	;;
-	ReplicasMaxAbsoluteDelay)
-		 /usr/bin/clickhouse-client  -h $CH_HOST -d system -q "select value from asynchronous_metrics where metric = 'ReplicasMaxAbsoluteDelay'"	
-	;;
-	Uptime)
-		 /usr/bin/clickhouse-client  -h $CH_HOST -d system -q "select value from asynchronous_metrics where metric = 'Uptime'"	
-	;;
-	InsertedBytes)
-		 /usr/bin/clickhouse-client  -h $CH_HOST -d system -q "select value from events where event = 'InsertedBytes'"	
-	;;
-	ReadCompressedBytes)
-		 /usr/bin/clickhouse-client  -h $CH_HOST -d system -q "select value from events where event = 'ReadCompressedBytes'"	
-	;;
 	DiskUsage)
-		du -sb $CH_PATH | awk '{print $1}'
-	;;
+		du -sb "$CH_PATH" | awk '{print $1}'
+		;;
+
 	Revision)
-		cat  $CH_PATH/status | grep Revision | awk '{print $2}'
-	;;
+		cat  "$CH_PATH/status" | grep Revision | awk '{print $2}'
+		;;
+
 	LongestRunningQuery)
-		 /usr/bin/clickhouse-client -h $CH_HOST -q "select elapsed from system.processes" | sort | tail -1
-	;;
+		run_ch_process_command | sort | tail -1
+		;;
+
+	DelayedInserts		| \
+	HTTPConnection		| \
+	InsertedBytes		| \
+	InsertedBytes		| \
+	InsertedRows		| \
+	InsertQuery		| \
+	MaxPartCountForPartition| \
+	MemoryTracking		| \
+	MergedRows		| \
+	MergedUncompressedBytes	| \
+	Query			| \
+	Read			| \
+	ReadCompressedBytes	| \
+	ReplicasMaxAbsoluteDelay| \
+	ReplicasSumQueueSize	| \
+	SelectedParts		| \
+	SelectQuery		| \
+	TCPConnection		| \
+	Uptime			| \
+	Write			| \
+	ZooKeeperWatch		)
+		run_ch_metric_command "$ITEM"
+		;;
+
 	*)
-		echo "There is no such argument"
+		echo "Unknown argument '$ITEM'. Please check command to run"
 		exit 1
-	;;
+		;;
 esac
 
