@@ -291,7 +291,7 @@
                     <master_item/>
                 </item>
                 <item>
-                    <name>Clickhouse: currently longest running query time</name>
+                    <name>Clickhouse: the longest currently running query time</name>
                     <type>0</type>
                     <snmp_community/>
                     <snmp_oid/>
@@ -373,7 +373,7 @@
                     <master_item/>
                 </item>
                 <item>
-                    <name>Clickhouse: current memory taken by queries</name>
+                    <name>Clickhouse: current memory used by queries</name>
                     <type>0</type>
                     <snmp_community/>
                     <snmp_oid/>
