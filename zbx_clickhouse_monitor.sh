@@ -80,7 +80,6 @@ case "$ITEM" in
 	DelayedInserts		| \
 	HTTPConnection		| \
 	InsertedBytes		| \
-	InsertedBytes		| \
 	InsertedRows		| \
 	InsertQuery		| \
 	MaxPartCountForPartition| \
