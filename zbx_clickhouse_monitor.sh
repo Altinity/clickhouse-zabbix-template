@@ -43,15 +43,48 @@ if [ "$?" -ne 0 ]; then
 fi 
 
 ##
+## Run ClickHouse monitoring query
+##
+function run_ch_query()
+{
+	# Table where to look into
+	TABLE=$1
+	# Column where to look into
+	COLUMN=$2
+	# Metric name to fetch
+	METRIC=$3
+	# System DB to look into
+	DATABASE="system"
+
+	SQL="SELECT value FROM ${DATABASE}.${TABLE} WHERE $COLUMN = '$METRIC'"
+	/usr/bin/clickhouse-client -h "$CH_HOST" -d "$DATABASE" -q "$SQL"
+}
+
+##
 ## Fetch metric by name from ClickHouse
 ##
 function run_ch_metric_command()
 {
-	# Metric name to fetch
-	METRIC=$1
-	DATABASE="system"
-	SQL="SELECT value FROM metrics WHERE metric = '$METRIC'"
-	/usr/bin/clickhouse-client -h "$CH_HOST" -d "$DATABASE" -q "$SQL"
+	# $1 - metric name to fetch
+	run_ch_query 'metrics' 'metric' $1
+}
+
+##
+## Fetch asynchronous metric by name from ClickHouse
+##
+function run_ch_async_metric_command()
+{
+	# $1 - metric name to fetch
+	run_ch_query 'asynchronous_metrics' 'metric' $1
+}
+
+##
+## Fetch event by name from ClickHouse
+##
+function run_ch_event_command()
+{
+	# $1 - metric name to fetch
+	run_ch_query 'events' 'event' $1
 }
 
 ##
@@ -79,25 +112,31 @@ case "$ITEM" in
 
 	DelayedInserts		| \
 	HTTPConnection		| \
-	InsertedBytes		| \
-	InsertedRows		| \
-	InsertQuery		| \
-	MaxPartCountForPartition| \
 	MemoryTracking		| \
-	MergedRows		| \
-	MergedUncompressedBytes	| \
 	Query			| \
 	Read			| \
-	ReadCompressedBytes	| \
-	ReplicasMaxAbsoluteDelay| \
-	ReplicasSumQueueSize	| \
-	SelectedParts		| \
-	SelectQuery		| \
 	TCPConnection		| \
-	Uptime			| \
 	Write			| \
 	ZooKeeperWatch		)
 		run_ch_metric_command "$ITEM"
+		;;
+
+	MaxPartCountForPartition| \
+	ReplicasMaxAbsoluteDelay| \
+	ReplicasSumQueueSize	| \
+	Uptime			)
+		run_ch_async_metric_command "$ITEM"
+		;;
+
+	InsertedBytes		| \
+	InsertedRows		| \
+	InsertQuery		| \
+	MergedRows		| \
+	MergedUncompressedBytes	| \
+	ReadCompressedBytes	| \
+	SelectedParts		| \
+	SelectQuery		)
+		run_ch_event_command "$ITEM"
 		;;
 
 	*)
