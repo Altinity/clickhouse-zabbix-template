@@ -97,6 +97,17 @@ function run_ch_process_command()
 	/usr/bin/clickhouse-client -h "$CH_HOST" -d "$DATABASE" -q "$SQL"
 }
 
+##
+## Fetch event by name from ClickHouse
+##
+function run_ch_event_command_zeropad()
+{
+	# $1 - metric name to fetch
+	res=`run_ch_query 'events' 'event' $1`
+	[ -n "$res" ] || res=0
+	echo "$res"
+}
+
 case "$ITEM" in
 	DiskUsage)
 		du -sb "$CH_PATH" | awk '{print $1}'
@@ -134,9 +145,12 @@ case "$ITEM" in
 	MergedRows		| \
 	MergedUncompressedBytes	| \
 	ReadCompressedBytes	| \
-	SelectedParts		| \
 	SelectQuery		)
 		run_ch_event_command "$ITEM"
+		;;
+
+	SelectedParts)
+		run_ch_event_command_zeropad "$ITEM"
 		;;
 
 	*)
