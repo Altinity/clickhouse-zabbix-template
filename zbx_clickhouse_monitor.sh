@@ -16,7 +16,7 @@ CH_HOST="${2:-localhost}"
 ##
 function usage()
 {
-	echo "Usage: $(basename "$0") Command [ClickHouse Host to Connect]"
+	echo "Usage: $(basename "$0") Command [ClickHouse Host to Connect] [Additional ClickHouse-Client flags]"
 }
 
 # Command to execute
@@ -26,6 +26,9 @@ if [ -z "$ITEM" ]; then
 	usage
 	exit 1
 fi
+
+# Collect for additional parameters if available. Always get last argument if args count > 2.
+if [ $# -gt 2 ] ; then  ADD_FLAGS="${@: -1}" ; else ADD_FLAGS="" ; fi
 
 # Ensure xmllint is available
 xmllint="$(which xmllint)"
@@ -57,7 +60,7 @@ function run_ch_query()
 	DATABASE="system"
 
 	SQL="SELECT value FROM ${DATABASE}.${TABLE} WHERE $COLUMN = '$METRIC'"
-	/usr/bin/clickhouse-client -h "$CH_HOST" -d "$DATABASE" -q "$SQL"
+	/usr/bin/clickhouse-client -h "$CH_HOST" -d "$DATABASE" -q "$SQL" $(echo "$ADD_FLAGS")
 }
 
 ##
@@ -94,7 +97,7 @@ function run_ch_process_command()
 {
 	DATABASE="system"
 	SQL="SELECT elapsed FROM processes"
-	/usr/bin/clickhouse-client -h "$CH_HOST" -d "$DATABASE" -q "$SQL"
+	/usr/bin/clickhouse-client -h "$CH_HOST" -d "$DATABASE" -q "$SQL" $(echo "$ADD_FLAGS")
 }
 
 ##
