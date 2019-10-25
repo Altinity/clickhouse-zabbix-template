@@ -27,8 +27,13 @@ if [ -z "$ITEM" ]; then
 	exit 1
 fi
 
-# Collect for additional parameters if available. Always get last argument if args count > 2.
-if [ $# -gt 2 ] ; then  ADD_FLAGS="${@: -1}" ; else ADD_FLAGS="" ; fi
+# Collect additional parameters if available. Get last argument if args count > 2. 
+# IMPORTANT Middle agruments are skipped for simplicity
+if [ $# -gt 2 ]; then
+	ADD_FLAGS="${@: -1}"
+else
+	ADD_FLAGS=""
+fi
 
 # Ensure xmllint is available
 xmllint="$(which xmllint)"
