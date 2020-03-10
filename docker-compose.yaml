@@ -2,11 +2,38 @@ version: '3'
 services:
   zabbix:
     image: zabbix/zabbix-appliance:alpine-trunk
+    ports:
+    - 80:80
+    networks:
+      main:
+        aliases:
+          - zabbix
   clickhouse:
-    image: yandex/clickhouse-server:last
+    image: yandex/clickhouse-server:latest
+    ports:
+    - 8123:8123
+    - 9000:9000
+    volumes:
+    - ./zbx_clickhouse_config.xml:/etc/clickhouse-server/config.xml
+    networks:
+      main:
+        aliases:
+          - clickhouse
   zabbix-agent:
     build:
-      dockerfile: docker/agent/Dockerfile
-    links:
+      dockerfile: Dockerfile
+      context: ./
+    volumes:
+      - ./zbx_clickhouse_config.xml:/etc/clickhouse-server/config.xml
+      - ./zbx_clickhouse_monitor.sh:/etc/zabbix/scripts/zbx_clickhouse_monitor.sh
+      - ./zbx_clickhouse_template.xml:/etc/zabbix/scripts/zbx_clickhouse_template.xml
+      - ./zbx_clickhouse_agent.example.conf:/etc/zabbix/zabbix_agentd.d/zbx_clickhouse_agent.conf
+    networks:
+      main:
+        aliases:
+          - zabbix-agent
+    depends_on:
       - zabbix
       - clickhouse
+networks:
+  main:

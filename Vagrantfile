@@ -4,18 +4,24 @@ Vagrant.configure(2) do |config|
   config.vm.box = "ubuntu/bionic64"
   config.vm.box_check_update = false
 
+  config.hostmanager.enabled = true
+  config.hostmanager.manage_host = true
+  config.hostmanager.ignore_private_ip = false
+  config.hostmanager.include_offline = false
+
   if Vagrant.has_plugin?("vagrant-vbguest")
     config.vbguest.auto_update = false
   end
 
-  config.vm.define :clickhouse_operator do |clickhouse_operator|
-    clickhouse_operator.vm.network "private_network", ip: "172.16.2.99", nic_type: "virtio"
-    clickhouse_operator.vm.host_name = "local-altinity-clickhouse-operator"
+  config.vm.define :clickhouse_zabbix do |clickhouse_zabbix|
+    clickhouse_zabbix.vm.network "private_network", ip: "172.16.2.2", nic_type: "virtio"
+    clickhouse_zabbix.vm.host_name = "local-altinity-clickhouse-zabbix"
+    clickhouse_zabbix.hostmanager.aliases = ["clickhouse-zabbix.local"]
   end
 
   config.vm.provider "virtualbox" do |vb|
     vb.gui = false
-    vb.memory = "4096"
+    vb.memory = "2048"
   end
 
   config.vm.provision "shell", inline: <<-SHELL
@@ -46,6 +52,9 @@ Vagrant.configure(2) do |config|
     rm -rf /usr/bin/pip3
     pip3 install -U setuptools
     pip3 install -U docker-compose
-
+    cd /vagrant
+    docker-compose pull
+    docker-compose build
+    docker-compose up -d
   SHELL
 end

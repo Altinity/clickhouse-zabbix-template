@@ -6,7 +6,7 @@ How to set up server with Zabbix agent:
   * Clone this repo.
   * Edit `/etc/zabbix/zabbix_agentd.conf`. Add the following line:
 ```bash
-	UserParameter=ch_params[*],sh /PATH/TO/zbx_clickhouse_monitor.sh "$1" "HOST_WHERE_CH_IS_RUNNING" "ADDITIONAL CLICKHOUSE-CLIENT PARAMS"
+	UserParameter=ch_params[*],bash /PATH/TO/zbx_clickhouse_monitor.sh "$1" "HOST_WHERE_CH_IS_RUNNING" "ADDITIONAL CLICKHOUSE-CLIENT PARAMS"
 ```
   where:
   * `/PATH/TO/zbx_clickhouse_monitor.sh` depends on where you've cloned this repo.
