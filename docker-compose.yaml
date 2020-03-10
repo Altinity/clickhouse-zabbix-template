@@ -1,0 +1,12 @@
+version: '3'
+services:
+  zabbix:
+    image: zabbix/zabbix-appliance:alpine-trunk
+  clickhouse:
+    image: yandex/clickhouse-server:last
+  zabbix-agent:
+    build:
+      dockerfile: docker/agent/Dockerfile
+    links:
+      - zabbix
+      - clickhouse
