@@ -3,3 +3,4 @@ vendor/
 .idea/
 .vagrant/
 *.log
+*.pcap

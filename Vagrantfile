@@ -29,7 +29,7 @@ Vagrant.configure(2) do |config|
 
     apt-get update
     apt-get install --no-install-recommends -y apt-transport-https ca-certificates software-properties-common curl
-    apt-get install --no-install-recommends -y htop ethtool mc curl wget jq socat git
+    apt-get install --no-install-recommends -y htop ethtool mc curl wget jq socat git mysql-client
 
     # yq
     apt-key adv --keyserver keyserver.ubuntu.com --recv-keys CC86BB64
