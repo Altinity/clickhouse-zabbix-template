@@ -65,7 +65,7 @@ function run_ch_query()
 	DATABASE="system"
 
 	SQL="SELECT value FROM ${DATABASE}.${TABLE} WHERE $COLUMN = '$METRIC'"
-	/usr/bin/clickhouse-client -h "$CH_HOST" -d "$DATABASE" -q "$SQL" $(echo "$ADD_FLAGS")
+	clickhouse-client -h "$CH_HOST" -d "$DATABASE" -q "$SQL" $(echo "$ADD_FLAGS")
 }
 
 ##
@@ -102,7 +102,7 @@ function run_ch_process_command()
 {
 	DATABASE="system"
 	SQL="SELECT elapsed FROM processes"
-	/usr/bin/clickhouse-client -h "$CH_HOST" -d "$DATABASE" -q "$SQL" $(echo "$ADD_FLAGS")
+	clickhouse-client -h "$CH_HOST" -d "$DATABASE" -q "$SQL" $(echo "$ADD_FLAGS")
 }
 
 ##
@@ -132,9 +132,18 @@ case "$ITEM" in
 	DelayedInserts		| \
 	HTTPConnection		| \
 	MemoryTracking		| \
+	MemoryTrackingInBackgroundProcessingPool | \
+  MemoryTrackingInBackgroundMoveProcessingPool | \
+  MemoryTrackingInBackgroundSchedulePool | \
+  MemoryTrackingForMerges | \
 	Query			| \
-	Read			| \
 	TCPConnection		| \
+	MySQLConnection		| \
+	ReadonlyReplica   | \
+	Merge			| \
+	DistributedSend | \
+	DistributedFilesToInsert | \
+	Read			| \
 	Write			| \
 	ZooKeeperWatch		)
 		run_ch_metric_command "$ITEM"
@@ -153,6 +162,14 @@ case "$ITEM" in
 	MergedRows		| \
 	MergedUncompressedBytes	| \
 	ReadCompressedBytes	| \
+	ReplicaPartialShutdown | \
+	ZooKeeperUserExceptions | \
+	ZooKeeperHardwareExceptions | \
+	ZooKeeperOtherExceptions | \
+	ZooKeeperInit | \
+	NetworkErrors | \
+	DistributedConnectionFailAtAll | \
+	DistributedConnectionFailTry | \
 	SelectQuery		)
 		run_ch_event_command "$ITEM"
 		;;

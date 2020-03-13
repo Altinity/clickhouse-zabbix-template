@@ -1,12 +1,17 @@
 # Zabbix template for ClickHouse
+Required Zabbix Server version - 3.4+
 
 How to set up server with Zabbix agent:
-  * Ensure `xmllint` is installed.
-  * Ensure `clickhouse-client` is installed.
+  * Ensure `xmllint` is installed 
+    - for Debian\Ubuntu `apt-get install -y libxml2-utils`
+    - for CentOS / Fedora `yum install -y libxml2` 
+    - for OpenSUSE `yum install -y libxml2-tools` 
+  * Ensure `clickhouse-client` is installed and allow access to monitored ClickHouse server
+    - https://clickhouse.tech/docs/en/getting_started/install/
   * Clone this repo.
   * Edit `/etc/zabbix/zabbix_agentd.conf`. Add the following line:
 ```bash
-	UserParameter=ch_params[*],sh /PATH/TO/zbx_clickhouse_monitor.sh "$1" "HOST_WHERE_CH_IS_RUNNING" "ADDITIONAL CLICKHOUSE-CLIENT PARAMS"
+	UserParameter=ch_params[*],bash /PATH/TO/zbx_clickhouse_monitor.sh "$1" "HOST_WHERE_CH_IS_RUNNING" "ADDITIONAL CLICKHOUSE-CLIENT PARAMS"
 ```
   where:
   * `/PATH/TO/zbx_clickhouse_monitor.sh` depends on where you've cloned this repo.

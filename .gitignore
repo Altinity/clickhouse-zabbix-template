@@ -1,0 +1,6 @@
+﻿composer.*
+vendor/
+.idea/
+.vagrant/
+*.log
+*.pcap
