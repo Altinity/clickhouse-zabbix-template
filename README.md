@@ -26,10 +26,4 @@ And finally
 ![image03](img/image03.png)
 ![image04](img/image04.png)
 ![image05](img/image05.png)
-![image06](img/image06.png)
-![image07](img/image07.png)
-![image08](img/image08.png)
-![image09](img/image09.png)
-![image10](img/image10.png)
-![image11](img/image11.png)
-
+![dashboard](img/dashboard.png)
