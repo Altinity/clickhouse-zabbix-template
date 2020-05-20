@@ -168,6 +168,7 @@ case "$ITEM" in
 	ZooKeeperOtherExceptions | \
 	ZooKeeperInit | \
 	NetworkErrors | \
+	DNSError      | \
 	DistributedConnectionFailAtAll | \
 	DistributedConnectionFailTry | \
 	SelectQuery		)
