@@ -2025,9 +2025,9 @@
             <priority>2</priority>
             <description>Please check DNS settings and remote_servers part of /etc/clickhouse-server/&#13;
 &#13;
-https://clickhouse.tech/docs/en/operations/server_settings/settings/#server_settings_remote_servers&#13;
+https://clickhouse.tech/docs/en/operations/server-configuration-parameters/settings/#server-settings-remote-servers&#13;
 &#13;
-https://clickhouse.tech/docs/en/operations/server_settings/settings/#server-settings-disable_internal_dns_cache&#13;
+https://clickhouse.tech/docs/en/operations/server-configuration-parameters/settings/#server-settings-disable-internal-dns-cache&#13;
 &#13;
 https://clickhouse.tech/docs/en/query_language/system/#query_language-system-drop-dns-cache</description>
             <type>0</type>
@@ -2059,7 +2059,7 @@ or&#13;
 {Clickhouse:ch_params[DistributedFilesToInsert].last()}&gt;={$MAX_DELAYED_FILES_TO_DISTRIBUTED_INSERT}</expression>
             <recovery_mode>0</recovery_mode>
             <recovery_expression/>
-            <name>{HOST.HOST} distributed connection exceptions occured</name>
+            <name>{HOST.HOST} distributed connection exceptions occurred</name>
             <correlation_mode>0</correlation_mode>
             <correlation_tag/>
             <url>https://clickhouse.tech/docs/en/operations/table_engines/distributed/</url>
@@ -2070,9 +2070,9 @@ or&#13;
 &#13;
 https://clickhouse.tech/docs/en/operations/table_engines/distributed/&#13;
 &#13;
-https://clickhouse.tech/docs/en/query_language/system/#query_language-system-distributed&#13;
+https://clickhouse.tech/docs/en/sql-reference/statements/system/#query-language-system-distributed&#13;
 &#13;
-https://clickhouse.tech/docs/en/operations/server_settings/settings/#server_settings_remote_servers&#13;
+https://clickhouse.tech/docs/en/operations/server-configuration-parameters/settings/#server-settings-remote-servers&#13;
 &#13;
 &#13;
 When you insert data to distributed table.&#13;
