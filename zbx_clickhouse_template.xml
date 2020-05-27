@@ -1736,7 +1736,7 @@
                     <value>600</value>
                 </macro>
                 <macro>
-                    <macro>{$MAX_REPLICA_DELAY_DISTIBUTED_QUERIES}</macro>
+                    <macro>{$MAX_REPLICA_DELAY_DISTRIBUTED_QUERIES}</macro>
                     <value>300</value>
                 </macro>
                 <macro>
@@ -2131,10 +2131,10 @@ Data is written to target *MergreTree tables asynchronously. When inserted in th
             <tags/>
         </trigger>
         <trigger>
-            <expression>{Clickhouse:ch_params[ReplicasMaxAbsoluteDelay].last(3m)} &gt;= {$MAX_REPLICA_DELAY_DISTIBUTED_QUERIES}</expression>
+            <expression>{Clickhouse:ch_params[ReplicasMaxAbsoluteDelay].last(3m)} &gt;= {$MAX_REPLICA_DELAY_DISTRIBUTED_QUERIES}</expression>
             <recovery_mode>0</recovery_mode>
             <recovery_expression/>
-            <name>{HOST.HOST} have replication lag more {$MAX_REPLICA_DELAY_DISTIBUTED_QUERIES} sec</name>
+            <name>{HOST.HOST} have replication lag more {$MAX_REPLICA_DELAY_DISTRIBUTED_QUERIES} sec</name>
             <correlation_mode>0</correlation_mode>
             <correlation_tag/>
             <url>https://clickhouse.tech/docs/en/operations/settings/settings/#settings-max_replica_delay_for_distributed_queries</url>
