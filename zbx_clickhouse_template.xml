@@ -2168,7 +2168,7 @@ Check disks and networks on monitored ClickHouse servers</description>
             <expression>{Clickhouse:ch_params[MaxPartCountForPartition].last()} &gt;= {$MAX_PARTS_PER_PARTITION} * 0.9</expression>
             <recovery_mode>0</recovery_mode>
             <recovery_expression/>
-            <name>{HOST.HOST} MergeTree parts 90% of {$MAX_PARTS_PER_PARTITION}, please descease INSERT queries frequency</name>
+            <name>{HOST.HOST} MergeTree parts 90% of {$MAX_PARTS_PER_PARTITION}, please decrease INSERT queries frequency</name>
             <correlation_mode>0</correlation_mode>
             <correlation_tag/>
             <url/>
