@@ -2213,7 +2213,10 @@ and&#13;
 Please use Buffer table&#13;
 https://clickhouse.tech/docs/en/operations/table_engines/buffer/&#13;
 or &#13;
-https://github.com/nikepan/clickhouse-bulk</description>
+https://github.com/nikepan/clickhouse-bulk&#13;
+or &#13;
+https://github.com/VKCOM/kittenhouse
+            </description>
             <type>0</type>
             <manual_close>0</manual_close>
             <dependencies/>
