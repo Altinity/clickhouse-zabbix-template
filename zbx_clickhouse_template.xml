@@ -2142,7 +2142,7 @@ Data is written to target *MergreTree tables asynchronously. When inserted in th
             <priority>4</priority>
             <description>When replica have too much lag, it can be skipped from Distributed SELECT Queries without errors and you will have wrong query results&#13;
 &#13;
-Check disks and networks on monitoring servers</description>
+Check disks and networks on monitored ClickHouse servers</description>
             <type>0</type>
             <manual_close>1</manual_close>
             <dependencies/>
