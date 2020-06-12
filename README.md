@@ -1,5 +1,7 @@
 # Zabbix template for ClickHouse
 Required Zabbix Server version - 3.0+
+For zabbix 3.0+ please use [Altinity Zabbix ClickHouse integration zabbix_3.0 branch](https://github.com/Altinity/clickhouse-zabbix-template/tree/zabbix_3.0) 
+For zabbix 3.4+ please use [Altinity Zabbix ClickHouse integration master branch](https://github.com/Altinity/clickhouse-zabbix-template/tree/master) 
 For zabbix 5.0+ please use [official Zabbix ClickHouse integration used http_agent](https://www.zabbix.com/integrations/clickhouse) 
 
 How to set up server with Zabbix agent:
