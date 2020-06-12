@@ -1,7 +1,7 @@
 version: '3'
 services:
   zabbix:
-    image: zabbix/zabbix-appliance:ubuntu-3.4-latest
+    image: zabbix/zabbix-appliance:ubuntu-3.0-latest
     ports:
     - 80:80
     networks:

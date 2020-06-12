@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <zabbix_export>
-    <version>3.4</version>
-    <date>2020-05-20T05:55:39Z</date>
+    <version>3.0</version>
+    <date>2020-06-12T02:42:44Z</date>
     <groups>
         <group>
             <name>Clickhouse servers</name>
@@ -29,9 +29,10 @@
                     <snmp_community/>
                     <snmp_oid/>
                     <key>ch_params[DelayedInserts]</key>
-                    <delay>30s</delay>
-                    <history>90d</history>
-                    <trends>365d</trends>
+                    <multiplier>0</multiplier><delta>0</delta><formula>1</formula><delay_flex/><data_type>0</data_type>
+                    <delay>30</delay>
+                    <history>90</history>
+                    <trends>365</trends>
                     <status>0</status>
                     <value_type>3</value_type>
                     <allowed_hosts/>
@@ -60,14 +61,6 @@
                     </applications>
                     <valuemap/>
                     <logtimefmt/>
-                    <preprocessing>
-                        <step>
-                            <type>9</type>
-                            <params/>
-                        </step>
-                    </preprocessing>
-                    <jmx_endpoint/>
-                    <master_item/>
                 </item>
                 <item>
                     <name>data directory size</name>
@@ -75,9 +68,10 @@
                     <snmp_community/>
                     <snmp_oid/>
                     <key>ch_params[DiskUsage]</key>
-                    <delay>30s</delay>
-                    <history>90d</history>
-                    <trends>365d</trends>
+                    <multiplier>0</multiplier><delta>0</delta><formula>1</formula><delay_flex/><data_type>0</data_type>
+                    <delay>30</delay>
+                    <history>90</history>
+                    <trends>365</trends>
                     <status>0</status>
                     <value_type>3</value_type>
                     <allowed_hosts/>
@@ -106,9 +100,6 @@
                     </applications>
                     <valuemap/>
                     <logtimefmt/>
-                    <preprocessing/>
-                    <jmx_endpoint/>
-                    <master_item/>
                 </item>
                 <item>
                     <name>distributed connection fail after all retries finished</name>
@@ -116,9 +107,10 @@
                     <snmp_community/>
                     <snmp_oid/>
                     <key>ch_params[DistributedConnectionFailAtAll]</key>
-                    <delay>30s</delay>
-                    <history>90d</history>
-                    <trends>365d</trends>
+                    <multiplier>0</multiplier><delta>0</delta><formula>1</formula><delay_flex/><data_type>0</data_type>
+                    <delay>30</delay>
+                    <history>90</history>
+                    <trends>365</trends>
                     <status>0</status>
                     <value_type>3</value_type>
                     <allowed_hosts/>
@@ -147,14 +139,6 @@
                     </applications>
                     <valuemap/>
                     <logtimefmt/>
-                    <preprocessing>
-                        <step>
-                            <type>9</type>
-                            <params/>
-                        </step>
-                    </preprocessing>
-                    <jmx_endpoint/>
-                    <master_item/>
                 </item>
                 <item>
                     <name>distributed connection fail with retry</name>
@@ -162,9 +146,10 @@
                     <snmp_community/>
                     <snmp_oid/>
                     <key>ch_params[DistributedConnectionFailTry]</key>
-                    <delay>30s</delay>
-                    <history>90d</history>
-                    <trends>365d</trends>
+                    <multiplier>0</multiplier><delta>0</delta><formula>1</formula><delay_flex/><data_type>0</data_type>
+                    <delay>30</delay>
+                    <history>90</history>
+                    <trends>365</trends>
                     <status>0</status>
                     <value_type>3</value_type>
                     <allowed_hosts/>
@@ -193,14 +178,6 @@
                     </applications>
                     <valuemap/>
                     <logtimefmt/>
-                    <preprocessing>
-                        <step>
-                            <type>9</type>
-                            <params/>
-                        </step>
-                    </preprocessing>
-                    <jmx_endpoint/>
-                    <master_item/>
                 </item>
                 <item>
                     <name>distributed pending files</name>
@@ -208,9 +185,10 @@
                     <snmp_community/>
                     <snmp_oid/>
                     <key>ch_params[DistributedFilesToInsert]</key>
-                    <delay>30s</delay>
-                    <history>90d</history>
-                    <trends>365d</trends>
+                    <multiplier>0</multiplier><delta>0</delta><formula>1</formula><delay_flex/><data_type>0</data_type>
+                    <delay>30</delay>
+                    <history>90</history>
+                    <trends>365</trends>
                     <status>0</status>
                     <value_type>3</value_type>
                     <allowed_hosts/>
@@ -239,9 +217,6 @@
                     </applications>
                     <valuemap/>
                     <logtimefmt/>
-                    <preprocessing/>
-                    <jmx_endpoint/>
-                    <master_item/>
                 </item>
                 <item>
                     <name>distributed connections</name>
@@ -249,9 +224,10 @@
                     <snmp_community/>
                     <snmp_oid/>
                     <key>ch_params[DistributedSend]</key>
-                    <delay>30s</delay>
-                    <history>90d</history>
-                    <trends>365d</trends>
+                    <multiplier>0</multiplier><delta>0</delta><formula>1</formula><delay_flex/><data_type>0</data_type>
+                    <delay>30</delay>
+                    <history>90</history>
+                    <trends>365</trends>
                     <status>0</status>
                     <value_type>3</value_type>
                     <allowed_hosts/>
@@ -280,9 +256,6 @@
                     </applications>
                     <valuemap/>
                     <logtimefmt/>
-                    <preprocessing/>
-                    <jmx_endpoint/>
-                    <master_item/>
                 </item>
                 <item>
                     <name>dns errors available from 20.3</name>
@@ -290,9 +263,10 @@
                     <snmp_community/>
                     <snmp_oid/>
                     <key>ch_params[DNSError]</key>
-                    <delay>30s</delay>
-                    <history>90d</history>
-                    <trends>365d</trends>
+                    <multiplier>0</multiplier><delta>0</delta><formula>1</formula><delay_flex/><data_type>0</data_type>
+                    <delay>30</delay>
+                    <history>90</history>
+                    <trends>365</trends>
                     <status>0</status>
                     <value_type>3</value_type>
                     <allowed_hosts/>
@@ -321,14 +295,6 @@
                     </applications>
                     <valuemap/>
                     <logtimefmt/>
-                    <preprocessing>
-                        <step>
-                            <type>9</type>
-                            <params/>
-                        </step>
-                    </preprocessing>
-                    <jmx_endpoint/>
-                    <master_item/>
                 </item>
                 <item>
                     <name>current HTTP connections</name>
@@ -336,9 +302,10 @@
                     <snmp_community/>
                     <snmp_oid/>
                     <key>ch_params[HTTPConnection]</key>
-                    <delay>30s</delay>
-                    <history>90d</history>
-                    <trends>365d</trends>
+                    <multiplier>0</multiplier><delta>0</delta><formula>1</formula><delay_flex/><data_type>0</data_type>
+                    <delay>30</delay>
+                    <history>90</history>
+                    <trends>365</trends>
                     <status>0</status>
                     <value_type>3</value_type>
                     <allowed_hosts/>
@@ -367,9 +334,6 @@
                     </applications>
                     <valuemap/>
                     <logtimefmt/>
-                    <preprocessing/>
-                    <jmx_endpoint/>
-                    <master_item/>
                 </item>
                 <item>
                     <name>inserted bytes per second</name>
@@ -377,9 +341,10 @@
                     <snmp_community/>
                     <snmp_oid/>
                     <key>ch_params[InsertedBytes]</key>
-                    <delay>30s</delay>
-                    <history>90d</history>
-                    <trends>365d</trends>
+                    <multiplier>0</multiplier><delta>0</delta><formula>1</formula><delay_flex/><data_type>0</data_type>
+                    <delay>30</delay>
+                    <history>90</history>
+                    <trends>365</trends>
                     <status>0</status>
                     <value_type>3</value_type>
                     <allowed_hosts/>
@@ -408,14 +373,6 @@
                     </applications>
                     <valuemap/>
                     <logtimefmt/>
-                    <preprocessing>
-                        <step>
-                            <type>10</type>
-                            <params/>
-                        </step>
-                    </preprocessing>
-                    <jmx_endpoint/>
-                    <master_item/>
                 </item>
                 <item>
                     <name>inserted rows per second</name>
@@ -423,9 +380,10 @@
                     <snmp_community/>
                     <snmp_oid/>
                     <key>ch_params[InsertedRows]</key>
-                    <delay>30s</delay>
-                    <history>90d</history>
-                    <trends>365d</trends>
+                    <multiplier>0</multiplier><delta>0</delta><formula>1</formula><delay_flex/><data_type>0</data_type>
+                    <delay>30</delay>
+                    <history>90</history>
+                    <trends>365</trends>
                     <status>0</status>
                     <value_type>3</value_type>
                     <allowed_hosts/>
@@ -454,14 +412,6 @@
                     </applications>
                     <valuemap/>
                     <logtimefmt/>
-                    <preprocessing>
-                        <step>
-                            <type>10</type>
-                            <params/>
-                        </step>
-                    </preprocessing>
-                    <jmx_endpoint/>
-                    <master_item/>
                 </item>
                 <item>
                     <name>processed INSERT queries</name>
@@ -469,9 +419,10 @@
                     <snmp_community/>
                     <snmp_oid/>
                     <key>ch_params[InsertQuery]</key>
-                    <delay>30s</delay>
-                    <history>90d</history>
-                    <trends>365d</trends>
+                    <multiplier>0</multiplier><delta>0</delta><formula>1</formula><delay_flex/><data_type>0</data_type>
+                    <delay>30</delay>
+                    <history>90</history>
+                    <trends>365</trends>
                     <status>0</status>
                     <value_type>3</value_type>
                     <allowed_hosts/>
@@ -500,14 +451,6 @@
                     </applications>
                     <valuemap/>
                     <logtimefmt/>
-                    <preprocessing>
-                        <step>
-                            <type>9</type>
-                            <params/>
-                        </step>
-                    </preprocessing>
-                    <jmx_endpoint/>
-                    <master_item/>
                 </item>
                 <item>
                     <name>the longest currently running query time</name>
@@ -515,9 +458,10 @@
                     <snmp_community/>
                     <snmp_oid/>
                     <key>ch_params[LongestRunningQuery]</key>
-                    <delay>30s</delay>
-                    <history>90d</history>
-                    <trends>365d</trends>
+                    <multiplier>0</multiplier><delta>0</delta><formula>1</formula><delay_flex/><data_type>0</data_type>
+                    <delay>30</delay>
+                    <history>90</history>
+                    <trends>365</trends>
                     <status>0</status>
                     <value_type>0</value_type>
                     <allowed_hosts/>
@@ -546,9 +490,6 @@
                     </applications>
                     <valuemap/>
                     <logtimefmt/>
-                    <preprocessing/>
-                    <jmx_endpoint/>
-                    <master_item/>
                 </item>
                 <item>
                     <name>max count of parts per partition across all tables</name>
@@ -556,9 +497,10 @@
                     <snmp_community/>
                     <snmp_oid/>
                     <key>ch_params[MaxPartCountForPartition]</key>
-                    <delay>30s</delay>
-                    <history>90d</history>
-                    <trends>365d</trends>
+                    <multiplier>0</multiplier><delta>0</delta><formula>1</formula><delay_flex/><data_type>0</data_type>
+                    <delay>30</delay>
+                    <history>90</history>
+                    <trends>365</trends>
                     <status>0</status>
                     <value_type>3</value_type>
                     <allowed_hosts/>
@@ -587,9 +529,6 @@
                     </applications>
                     <valuemap/>
                     <logtimefmt/>
-                    <preprocessing/>
-                    <jmx_endpoint/>
-                    <master_item/>
                 </item>
                 <item>
                     <name>memory for background merges</name>
@@ -597,9 +536,10 @@
                     <snmp_community/>
                     <snmp_oid/>
                     <key>ch_params[MemoryTrackingForMerges]</key>
-                    <delay>30s</delay>
-                    <history>90d</history>
-                    <trends>365d</trends>
+                    <multiplier>0</multiplier><delta>0</delta><formula>1</formula><delay_flex/><data_type>0</data_type>
+                    <delay>30</delay>
+                    <history>90</history>
+                    <trends>365</trends>
                     <status>0</status>
                     <value_type>3</value_type>
                     <allowed_hosts/>
@@ -628,9 +568,6 @@
                     </applications>
                     <valuemap/>
                     <logtimefmt/>
-                    <preprocessing/>
-                    <jmx_endpoint/>
-                    <master_item/>
                 </item>
                 <item>
                     <name>memory for backround moves</name>
@@ -638,9 +575,10 @@
                     <snmp_community/>
                     <snmp_oid/>
                     <key>ch_params[MemoryTrackingInBackgroundMoveProcessingPool]</key>
-                    <delay>30s</delay>
-                    <history>90d</history>
-                    <trends>365d</trends>
+                    <multiplier>0</multiplier><delta>0</delta><formula>1</formula><delay_flex/><data_type>0</data_type>
+                    <delay>30</delay>
+                    <history>90</history>
+                    <trends>365</trends>
                     <status>0</status>
                     <value_type>3</value_type>
                     <allowed_hosts/>
@@ -669,9 +607,6 @@
                     </applications>
                     <valuemap/>
                     <logtimefmt/>
-                    <preprocessing/>
-                    <jmx_endpoint/>
-                    <master_item/>
                 </item>
                 <item>
                     <name>memory for background merges, mutations and fetches.</name>
@@ -679,9 +614,10 @@
                     <snmp_community/>
                     <snmp_oid/>
                     <key>ch_params[MemoryTrackingInBackgroundProcessingPool]</key>
-                    <delay>30s</delay>
-                    <history>90d</history>
-                    <trends>365d</trends>
+                    <multiplier>0</multiplier><delta>0</delta><formula>1</formula><delay_flex/><data_type>0</data_type>
+                    <delay>30</delay>
+                    <history>90</history>
+                    <trends>365</trends>
                     <status>0</status>
                     <value_type>3</value_type>
                     <allowed_hosts/>
@@ -710,9 +646,6 @@
                     </applications>
                     <valuemap/>
                     <logtimefmt/>
-                    <preprocessing/>
-                    <jmx_endpoint/>
-                    <master_item/>
                 </item>
                 <item>
                     <name>memory for bookkeeping tasks of Replicated tables.</name>
@@ -720,9 +653,10 @@
                     <snmp_community/>
                     <snmp_oid/>
                     <key>ch_params[MemoryTrackingInBackgroundSchedulePool]</key>
-                    <delay>30s</delay>
-                    <history>90d</history>
-                    <trends>365d</trends>
+                    <multiplier>0</multiplier><delta>0</delta><formula>1</formula><delay_flex/><data_type>0</data_type>
+                    <delay>30</delay>
+                    <history>90</history>
+                    <trends>365</trends>
                     <status>0</status>
                     <value_type>3</value_type>
                     <allowed_hosts/>
@@ -751,9 +685,6 @@
                     </applications>
                     <valuemap/>
                     <logtimefmt/>
-                    <preprocessing/>
-                    <jmx_endpoint/>
-                    <master_item/>
                 </item>
                 <item>
                     <name>memory used by queries</name>
@@ -761,9 +692,10 @@
                     <snmp_community/>
                     <snmp_oid/>
                     <key>ch_params[MemoryTracking]</key>
-                    <delay>30s</delay>
-                    <history>90d</history>
-                    <trends>365d</trends>
+                    <multiplier>0</multiplier><delta>0</delta><formula>1</formula><delay_flex/><data_type>0</data_type>
+                    <delay>30</delay>
+                    <history>90</history>
+                    <trends>365</trends>
                     <status>0</status>
                     <value_type>3</value_type>
                     <allowed_hosts/>
@@ -792,9 +724,6 @@
                     </applications>
                     <valuemap/>
                     <logtimefmt/>
-                    <preprocessing/>
-                    <jmx_endpoint/>
-                    <master_item/>
                 </item>
                 <item>
                     <name>merged rows per second</name>
@@ -802,9 +731,10 @@
                     <snmp_community/>
                     <snmp_oid/>
                     <key>ch_params[MergedRows]</key>
-                    <delay>30s</delay>
-                    <history>90d</history>
-                    <trends>365d</trends>
+                    <multiplier>0</multiplier><delta>0</delta><formula>1</formula><delay_flex/><data_type>0</data_type>
+                    <delay>30</delay>
+                    <history>90</history>
+                    <trends>365</trends>
                     <status>0</status>
                     <value_type>3</value_type>
                     <allowed_hosts/>
@@ -833,14 +763,6 @@
                     </applications>
                     <valuemap/>
                     <logtimefmt/>
-                    <preprocessing>
-                        <step>
-                            <type>10</type>
-                            <params/>
-                        </step>
-                    </preprocessing>
-                    <jmx_endpoint/>
-                    <master_item/>
                 </item>
                 <item>
                     <name>merged uncompressed bytes per second</name>
@@ -848,9 +770,10 @@
                     <snmp_community/>
                     <snmp_oid/>
                     <key>ch_params[MergedUncompressedBytes]</key>
-                    <delay>30s</delay>
-                    <history>90d</history>
-                    <trends>365d</trends>
+                    <multiplier>0</multiplier><delta>0</delta><formula>1</formula><delay_flex/><data_type>0</data_type>
+                    <delay>30</delay>
+                    <history>90</history>
+                    <trends>365</trends>
                     <status>0</status>
                     <value_type>3</value_type>
                     <allowed_hosts/>
@@ -879,14 +802,6 @@
                     </applications>
                     <valuemap/>
                     <logtimefmt/>
-                    <preprocessing>
-                        <step>
-                            <type>10</type>
-                            <params/>
-                        </step>
-                    </preprocessing>
-                    <jmx_endpoint/>
-                    <master_item/>
                 </item>
                 <item>
                     <name>current MySQL connections</name>
@@ -894,9 +809,10 @@
                     <snmp_community/>
                     <snmp_oid/>
                     <key>ch_params[MySQLConnection]</key>
-                    <delay>30s</delay>
-                    <history>90d</history>
-                    <trends>365d</trends>
+                    <multiplier>0</multiplier><delta>0</delta><formula>1</formula><delay_flex/><data_type>0</data_type>
+                    <delay>30</delay>
+                    <history>90</history>
+                    <trends>365</trends>
                     <status>0</status>
                     <value_type>3</value_type>
                     <allowed_hosts/>
@@ -925,9 +841,6 @@
                     </applications>
                     <valuemap/>
                     <logtimefmt/>
-                    <preprocessing/>
-                    <jmx_endpoint/>
-                    <master_item/>
                 </item>
                 <item>
                     <name>network errors, i.e. DNS resolve</name>
@@ -935,9 +848,10 @@
                     <snmp_community/>
                     <snmp_oid/>
                     <key>ch_params[NetworkErrors]</key>
-                    <delay>30s</delay>
-                    <history>90d</history>
-                    <trends>365d</trends>
+                    <multiplier>0</multiplier><delta>0</delta><formula>1</formula><delay_flex/><data_type>0</data_type>
+                    <delay>30</delay>
+                    <history>90</history>
+                    <trends>365</trends>
                     <status>0</status>
                     <value_type>3</value_type>
                     <allowed_hosts/>
@@ -966,14 +880,6 @@
                     </applications>
                     <valuemap/>
                     <logtimefmt/>
-                    <preprocessing>
-                        <step>
-                            <type>9</type>
-                            <params/>
-                        </step>
-                    </preprocessing>
-                    <jmx_endpoint/>
-                    <master_item/>
                 </item>
                 <item>
                     <name>current running queries</name>
@@ -981,9 +887,10 @@
                     <snmp_community/>
                     <snmp_oid/>
                     <key>ch_params[Query]</key>
-                    <delay>30s</delay>
-                    <history>90d</history>
-                    <trends>365d</trends>
+                    <multiplier>0</multiplier><delta>0</delta><formula>1</formula><delay_flex/><data_type>0</data_type>
+                    <delay>30</delay>
+                    <history>90</history>
+                    <trends>365</trends>
                     <status>0</status>
                     <value_type>3</value_type>
                     <allowed_hosts/>
@@ -1012,9 +919,6 @@
                     </applications>
                     <valuemap/>
                     <logtimefmt/>
-                    <preprocessing/>
-                    <jmx_endpoint/>
-                    <master_item/>
                 </item>
                 <item>
                     <name>read bytes per second</name>
@@ -1022,9 +926,10 @@
                     <snmp_community/>
                     <snmp_oid/>
                     <key>ch_params[ReadCompressedBytes]</key>
-                    <delay>30s</delay>
-                    <history>90d</history>
-                    <trends>365d</trends>
+                    <multiplier>0</multiplier><delta>0</delta><formula>1</formula><delay_flex/><data_type>0</data_type>
+                    <delay>30</delay>
+                    <history>90</history>
+                    <trends>365</trends>
                     <status>0</status>
                     <value_type>3</value_type>
                     <allowed_hosts/>
@@ -1053,14 +958,6 @@
                     </applications>
                     <valuemap/>
                     <logtimefmt/>
-                    <preprocessing>
-                        <step>
-                            <type>10</type>
-                            <params/>
-                        </step>
-                    </preprocessing>
-                    <jmx_endpoint/>
-                    <master_item/>
                 </item>
                 <item>
                     <name>Read-Only Replicas</name>
@@ -1068,9 +965,10 @@
                     <snmp_community/>
                     <snmp_oid/>
                     <key>ch_params[ReadonlyReplica]</key>
-                    <delay>30s</delay>
-                    <history>90d</history>
-                    <trends>365d</trends>
+                    <multiplier>0</multiplier><delta>0</delta><formula>1</formula><delay_flex/><data_type>0</data_type>
+                    <delay>30</delay>
+                    <history>90</history>
+                    <trends>365</trends>
                     <status>0</status>
                     <value_type>3</value_type>
                     <allowed_hosts/>
@@ -1099,9 +997,6 @@
                     </applications>
                     <valuemap/>
                     <logtimefmt/>
-                    <preprocessing/>
-                    <jmx_endpoint/>
-                    <master_item/>
                 </item>
                 <item>
                     <name>read, pread, io_getevents, etc. syscalls in fly</name>
@@ -1109,9 +1004,10 @@
                     <snmp_community/>
                     <snmp_oid/>
                     <key>ch_params[Read]</key>
-                    <delay>30s</delay>
-                    <history>90d</history>
-                    <trends>365d</trends>
+                    <multiplier>0</multiplier><delta>0</delta><formula>1</formula><delay_flex/><data_type>0</data_type>
+                    <delay>30</delay>
+                    <history>90</history>
+                    <trends>365</trends>
                     <status>0</status>
                     <value_type>3</value_type>
                     <allowed_hosts/>
@@ -1140,9 +1036,6 @@
                     </applications>
                     <valuemap/>
                     <logtimefmt/>
-                    <preprocessing/>
-                    <jmx_endpoint/>
-                    <master_item/>
                 </item>
                 <item>
                     <name>replica partial shutdown</name>
@@ -1150,9 +1043,10 @@
                     <snmp_community/>
                     <snmp_oid/>
                     <key>ch_params[ReplicaPartialShutdown]</key>
-                    <delay>30s</delay>
-                    <history>90d</history>
-                    <trends>365d</trends>
+                    <multiplier>0</multiplier><delta>0</delta><formula>1</formula><delay_flex/><data_type>0</data_type>
+                    <delay>30</delay>
+                    <history>90</history>
+                    <trends>365</trends>
                     <status>0</status>
                     <value_type>3</value_type>
                     <allowed_hosts/>
@@ -1181,14 +1075,6 @@
                     </applications>
                     <valuemap/>
                     <logtimefmt/>
-                    <preprocessing>
-                        <step>
-                            <type>9</type>
-                            <params/>
-                        </step>
-                    </preprocessing>
-                    <jmx_endpoint/>
-                    <master_item/>
                 </item>
                 <item>
                     <name>replication lag across all tables</name>
@@ -1196,9 +1082,10 @@
                     <snmp_community/>
                     <snmp_oid/>
                     <key>ch_params[ReplicasMaxAbsoluteDelay]</key>
-                    <delay>30s</delay>
-                    <history>90d</history>
-                    <trends>365d</trends>
+                    <multiplier>0</multiplier><delta>0</delta><formula>1</formula><delay_flex/><data_type>0</data_type>
+                    <delay>30</delay>
+                    <history>90</history>
+                    <trends>365</trends>
                     <status>0</status>
                     <value_type>3</value_type>
                     <allowed_hosts/>
@@ -1227,9 +1114,6 @@
                     </applications>
                     <valuemap/>
                     <logtimefmt/>
-                    <preprocessing/>
-                    <jmx_endpoint/>
-                    <master_item/>
                 </item>
                 <item>
                     <name>replication tasks in queue</name>
@@ -1237,9 +1121,10 @@
                     <snmp_community/>
                     <snmp_oid/>
                     <key>ch_params[ReplicasSumQueueSize]</key>
-                    <delay>30s</delay>
-                    <history>90d</history>
-                    <trends>365d</trends>
+                    <multiplier>0</multiplier><delta>0</delta><formula>1</formula><delay_flex/><data_type>0</data_type>
+                    <delay>30</delay>
+                    <history>90</history>
+                    <trends>365</trends>
                     <status>0</status>
                     <value_type>3</value_type>
                     <allowed_hosts/>
@@ -1268,9 +1153,6 @@
                     </applications>
                     <valuemap/>
                     <logtimefmt/>
-                    <preprocessing/>
-                    <jmx_endpoint/>
-                    <master_item/>
                 </item>
                 <item>
                     <name>revision</name>
@@ -1278,9 +1160,10 @@
                     <snmp_community/>
                     <snmp_oid/>
                     <key>ch_params[Revision]</key>
-                    <delay>30s</delay>
-                    <history>90d</history>
-                    <trends>365d</trends>
+                    <multiplier>0</multiplier><delta>0</delta><formula>1</formula><delay_flex/><data_type>0</data_type>
+                    <delay>30</delay>
+                    <history>90</history>
+                    <trends>365</trends>
                     <status>0</status>
                     <value_type>3</value_type>
                     <allowed_hosts/>
@@ -1309,9 +1192,6 @@
                     </applications>
                     <valuemap/>
                     <logtimefmt/>
-                    <preprocessing/>
-                    <jmx_endpoint/>
-                    <master_item/>
                 </item>
                 <item>
                     <name>parts read from disk per second</name>
@@ -1319,9 +1199,10 @@
                     <snmp_community/>
                     <snmp_oid/>
                     <key>ch_params[SelectedParts]</key>
-                    <delay>30s</delay>
-                    <history>90d</history>
-                    <trends>365d</trends>
+                    <multiplier>0</multiplier><delta>0</delta><formula>1</formula><delay_flex/><data_type>0</data_type>
+                    <delay>30</delay>
+                    <history>90</history>
+                    <trends>365</trends>
                     <status>0</status>
                     <value_type>3</value_type>
                     <allowed_hosts/>
@@ -1350,14 +1231,6 @@
                     </applications>
                     <valuemap/>
                     <logtimefmt/>
-                    <preprocessing>
-                        <step>
-                            <type>10</type>
-                            <params/>
-                        </step>
-                    </preprocessing>
-                    <jmx_endpoint/>
-                    <master_item/>
                 </item>
                 <item>
                     <name>processed SELECT queries</name>
@@ -1365,9 +1238,10 @@
                     <snmp_community/>
                     <snmp_oid/>
                     <key>ch_params[SelectQuery]</key>
-                    <delay>30s</delay>
-                    <history>90d</history>
-                    <trends>365d</trends>
+                    <multiplier>0</multiplier><delta>0</delta><formula>1</formula><delay_flex/><data_type>0</data_type>
+                    <delay>30</delay>
+                    <history>90</history>
+                    <trends>365</trends>
                     <status>0</status>
                     <value_type>3</value_type>
                     <allowed_hosts/>
@@ -1396,14 +1270,6 @@
                     </applications>
                     <valuemap/>
                     <logtimefmt/>
-                    <preprocessing>
-                        <step>
-                            <type>9</type>
-                            <params/>
-                        </step>
-                    </preprocessing>
-                    <jmx_endpoint/>
-                    <master_item/>
                 </item>
                 <item>
                     <name>current TCP connections</name>
@@ -1411,9 +1277,10 @@
                     <snmp_community/>
                     <snmp_oid/>
                     <key>ch_params[TCPConnection]</key>
-                    <delay>30s</delay>
-                    <history>90d</history>
-                    <trends>365d</trends>
+                    <multiplier>0</multiplier><delta>0</delta><formula>1</formula><delay_flex/><data_type>0</data_type>
+                    <delay>30</delay>
+                    <history>90</history>
+                    <trends>365</trends>
                     <status>0</status>
                     <value_type>3</value_type>
                     <allowed_hosts/>
@@ -1442,9 +1309,6 @@
                     </applications>
                     <valuemap/>
                     <logtimefmt/>
-                    <preprocessing/>
-                    <jmx_endpoint/>
-                    <master_item/>
                 </item>
                 <item>
                     <name>clickhouse-server uptime</name>
@@ -1452,9 +1316,10 @@
                     <snmp_community/>
                     <snmp_oid/>
                     <key>ch_params[Uptime]</key>
-                    <delay>30s</delay>
-                    <history>90d</history>
-                    <trends>365d</trends>
+                    <multiplier>0</multiplier><delta>0</delta><formula>1</formula><delay_flex/><data_type>0</data_type>
+                    <delay>30</delay>
+                    <history>90</history>
+                    <trends>365</trends>
                     <status>0</status>
                     <value_type>3</value_type>
                     <allowed_hosts/>
@@ -1483,9 +1348,6 @@
                     </applications>
                     <valuemap/>
                     <logtimefmt/>
-                    <preprocessing/>
-                    <jmx_endpoint/>
-                    <master_item/>
                 </item>
                 <item>
                     <name>write, pwrite, io_getevents, etc. syscalls in fly</name>
@@ -1493,9 +1355,10 @@
                     <snmp_community/>
                     <snmp_oid/>
                     <key>ch_params[Write]</key>
-                    <delay>30s</delay>
-                    <history>90d</history>
-                    <trends>365d</trends>
+                    <multiplier>0</multiplier><delta>0</delta><formula>1</formula><delay_flex/><data_type>0</data_type>
+                    <delay>30</delay>
+                    <history>90</history>
+                    <trends>365</trends>
                     <status>0</status>
                     <value_type>3</value_type>
                     <allowed_hosts/>
@@ -1524,9 +1387,6 @@
                     </applications>
                     <valuemap/>
                     <logtimefmt/>
-                    <preprocessing/>
-                    <jmx_endpoint/>
-                    <master_item/>
                 </item>
                 <item>
                     <name>Hardware exceptions in communication with ZooKeeper server</name>
@@ -1534,9 +1394,10 @@
                     <snmp_community/>
                     <snmp_oid/>
                     <key>ch_params[ZooKeeperHardwareExceptions]</key>
-                    <delay>30s</delay>
-                    <history>90d</history>
-                    <trends>365d</trends>
+                    <multiplier>0</multiplier><delta>0</delta><formula>1</formula><delay_flex/><data_type>0</data_type>
+                    <delay>30</delay>
+                    <history>90</history>
+                    <trends>365</trends>
                     <status>0</status>
                     <value_type>3</value_type>
                     <allowed_hosts/>
@@ -1565,14 +1426,6 @@
                     </applications>
                     <valuemap/>
                     <logtimefmt/>
-                    <preprocessing>
-                        <step>
-                            <type>9</type>
-                            <params/>
-                        </step>
-                    </preprocessing>
-                    <jmx_endpoint/>
-                    <master_item/>
                 </item>
                 <item>
                     <name>Other exceptions in communication with ZooKeeper server</name>
@@ -1580,9 +1433,10 @@
                     <snmp_community/>
                     <snmp_oid/>
                     <key>ch_params[ZooKeeperOtherExceptions]</key>
-                    <delay>30s</delay>
-                    <history>90d</history>
-                    <trends>365d</trends>
+                    <multiplier>0</multiplier><delta>0</delta><formula>1</formula><delay_flex/><data_type>0</data_type>
+                    <delay>30</delay>
+                    <history>90</history>
+                    <trends>365</trends>
                     <status>0</status>
                     <value_type>3</value_type>
                     <allowed_hosts/>
@@ -1611,14 +1465,6 @@
                     </applications>
                     <valuemap/>
                     <logtimefmt/>
-                    <preprocessing>
-                        <step>
-                            <type>9</type>
-                            <params/>
-                        </step>
-                    </preprocessing>
-                    <jmx_endpoint/>
-                    <master_item/>
                 </item>
                 <item>
                     <name>User exceptions in communication with ZooKeeper server</name>
@@ -1626,9 +1472,10 @@
                     <snmp_community/>
                     <snmp_oid/>
                     <key>ch_params[ZooKeeperUserExceptions]</key>
-                    <delay>30s</delay>
-                    <history>90d</history>
-                    <trends>365d</trends>
+                    <multiplier>0</multiplier><delta>0</delta><formula>1</formula><delay_flex/><data_type>0</data_type>
+                    <delay>30</delay>
+                    <history>90</history>
+                    <trends>365</trends>
                     <status>0</status>
                     <value_type>3</value_type>
                     <allowed_hosts/>
@@ -1657,14 +1504,6 @@
                     </applications>
                     <valuemap/>
                     <logtimefmt/>
-                    <preprocessing>
-                        <step>
-                            <type>9</type>
-                            <params/>
-                        </step>
-                    </preprocessing>
-                    <jmx_endpoint/>
-                    <master_item/>
                 </item>
                 <item>
                     <name>number of watches in zookeeper</name>
@@ -1672,9 +1511,10 @@
                     <snmp_community/>
                     <snmp_oid/>
                     <key>ch_params[ZooKeeperWatch]</key>
-                    <delay>30s</delay>
-                    <history>90d</history>
-                    <trends>365d</trends>
+                    <multiplier>0</multiplier><delta>0</delta><formula>1</formula><delay_flex/><data_type>0</data_type>
+                    <delay>30</delay>
+                    <history>90</history>
+                    <trends>365</trends>
                     <status>0</status>
                     <value_type>3</value_type>
                     <allowed_hosts/>
@@ -1703,13 +1543,9 @@
                     </applications>
                     <valuemap/>
                     <logtimefmt/>
-                    <preprocessing/>
-                    <jmx_endpoint/>
-                    <master_item/>
                 </item>
             </items>
             <discovery_rules/>
-            <httptests/>
             <macros>
                 <macro>
                     <macro>{$MAX_CONCURENT_QUERIES}</macro>
@@ -1983,43 +1819,27 @@
     <triggers>
         <trigger>
             <expression>{Clickhouse:ch_params[Uptime].nodata(3m)}</expression>
-            <recovery_mode>0</recovery_mode>
-            <recovery_expression/>
             <name>{HOST.HOST} clickhouse-server monitoring have no data, possible clickhouse-server is down, check `systemd status clickhouse-server` and check zbx_clickhouse_monitor.sh and `systemd status zabbix-agent`</name>
-            <correlation_mode>0</correlation_mode>
-            <correlation_tag/>
             <url/>
             <status>0</status>
             <priority>4</priority>
             <description/>
             <type>0</type>
-            <manual_close>1</manual_close>
             <dependencies/>
-            <tags/>
         </trigger>
         <trigger>
             <expression>{Clickhouse:ch_params[Uptime].last()} &lt;= 600</expression>
-            <recovery_mode>0</recovery_mode>
-            <recovery_expression/>
             <name>{HOST.HOST} clickhouse-server recently restated</name>
-            <correlation_mode>0</correlation_mode>
-            <correlation_tag/>
             <url/>
             <status>0</status>
             <priority>2</priority>
             <description/>
             <type>0</type>
-            <manual_close>1</manual_close>
             <dependencies/>
-            <tags/>
         </trigger>
         <trigger>
-            <expression>{Clickhouse:ch_params[DNSError].last()}&gt;0 or {Clickhouse:ch_params[NetworkErrors].last()}&gt;0</expression>
-            <recovery_mode>0</recovery_mode>
-            <recovery_expression/>
+            <expression>{Clickhouse:ch_params[DNSError].diff()}&gt;0 or {Clickhouse:ch_params[NetworkErrors].diff()}&gt;0</expression>
             <name>{HOST.HOST} clickhouse DNS errors occurred</name>
-            <correlation_mode>0</correlation_mode>
-            <correlation_tag/>
             <url/>
             <status>0</status>
             <priority>2</priority>
@@ -2031,37 +1851,25 @@ https://clickhouse.tech/docs/en/operations/server-configuration-parameters/setti
 &#13;
 https://clickhouse.tech/docs/en/query_language/system/#query_language-system-drop-dns-cache</description>
             <type>0</type>
-            <manual_close>1</manual_close>
             <dependencies/>
-            <tags/>
         </trigger>
         <trigger>
-            <expression>{Clickhouse:ch_params[Revision].change()}=1</expression>
-            <recovery_mode>0</recovery_mode>
-            <recovery_expression/>
+            <expression>{Clickhouse:ch_params[Revision].diff()}=1</expression>
             <name>{HOST.HOST} clickhouse version changed</name>
-            <correlation_mode>0</correlation_mode>
-            <correlation_tag/>
             <url/>
             <status>0</status>
             <priority>2</priority>
             <description/>
             <type>0</type>
-            <manual_close>0</manual_close>
             <dependencies/>
-            <tags/>
         </trigger>
         <trigger>
-            <expression>{Clickhouse:ch_params[DistributedConnectionFailAtAll].last()}&gt;=0 &#13;
-or&#13;
-{Clickhouse:ch_params[DistributedConnectionFailTry].last()}&gt;=0 &#13;
-or&#13;
-{Clickhouse:ch_params[DistributedFilesToInsert].last()}&gt;={$MAX_DELAYED_FILES_TO_DISTRIBUTED_INSERT}</expression>
-            <recovery_mode>0</recovery_mode>
-            <recovery_expression/>
+            <expression>{Clickhouse:ch_params[DistributedConnectionFailAtAll].diff()} &gt; 0
+or
+{Clickhouse:ch_params[DistributedConnectionFailTry].diff()} &gt; 0 &#13;
+or
+{Clickhouse:ch_params[DistributedFilesToInsert].diff()}&gt;={$MAX_DELAYED_FILES_TO_DISTRIBUTED_INSERT}</expression>
             <name>{HOST.HOST} distributed connection exceptions occurred</name>
-            <correlation_mode>0</correlation_mode>
-            <correlation_tag/>
             <url>https://clickhouse.tech/docs/en/operations/table_engines/distributed/</url>
             <status>0</status>
             <priority>3</priority>
@@ -2078,65 +1886,41 @@ https://clickhouse.tech/docs/en/operations/server-configuration-parameters/setti
 When you insert data to distributed table.&#13;
 Data is written to target *MergreTree tables asynchronously. When inserted in the table, the data block is just written to the local file system. The data is sent to the remote servers in the background as soon as possible. The period for sending data is managed by the distributed_directory_monitor_sleep_time_ms and distributed_directory_monitor_max_sleep_time_ms settings. The Distributed engine sends each file with inserted data separately, but you can enable batch sending of files with the distributed_directory_monitor_batch_inserts setting.</description>
             <type>0</type>
-            <manual_close>0</manual_close>
             <dependencies/>
-            <tags/>
         </trigger>
         <trigger>
-            <expression>{Clickhouse:ch_params[DelayedInserts].last()} &gt; 0</expression>
-            <recovery_mode>0</recovery_mode>
-            <recovery_expression/>
+            <expression>{Clickhouse:ch_params[DelayedInserts].diff()} &gt; 0</expression>
             <name>{HOST.HOST} have INSERT queries that are throttled due to high number of active data parts for partition in a MergeTree, please decrease INSERT frequency</name>
-            <correlation_mode>0</correlation_mode>
-            <correlation_tag/>
             <url>https://clickhouse.tech/docs/en/development/architecture/#merge-tree</url>
             <status>0</status>
             <priority>5</priority>
             <description>INSERT queries that are throttled due to high number of active data parts for partition in a MergeTree table.</description>
             <type>0</type>
-            <manual_close>0</manual_close>
             <dependencies/>
-            <tags/>
         </trigger>
         <trigger>
             <expression>{Clickhouse:ch_params[LongestRunningQuery].last()} &gt;= {$MAX_QUERY_TIME}</expression>
-            <recovery_mode>0</recovery_mode>
-            <recovery_expression/>
             <name>{HOST.HOST} have queries which running more than {$MAX_QUERY_TIME} sec</name>
-            <correlation_mode>0</correlation_mode>
-            <correlation_tag/>
             <url/>
             <status>0</status>
             <priority>2</priority>
             <description/>
             <type>0</type>
-            <manual_close>1</manual_close>
             <dependencies/>
-            <tags/>
         </trigger>
         <trigger>
             <expression>{Clickhouse:ch_params[ReadonlyReplica].last()} &gt; 0</expression>
-            <recovery_mode>0</recovery_mode>
-            <recovery_expression/>
             <name>{HOST.HOST} have read-only replicated tables, check Zookeeper state</name>
-            <correlation_mode>0</correlation_mode>
-            <correlation_tag/>
             <url>https://clickhouse.tech/docs/en/operations/table_engines/replication/#recovery-after-failures</url>
             <status>0</status>
             <priority>5</priority>
             <description>Number of Replicated tables that are currently in readonly state due to re-initialization after ZooKeeper session loss or due to startup without ZooKeeper configured.</description>
             <type>0</type>
-            <manual_close>0</manual_close>
             <dependencies/>
-            <tags/>
         </trigger>
         <trigger>
             <expression>{Clickhouse:ch_params[ReplicasMaxAbsoluteDelay].last(3m)} &gt;= {$MAX_REPLICA_DELAY_DISTRIBUTED_QUERIES}</expression>
-            <recovery_mode>0</recovery_mode>
-            <recovery_expression/>
             <name>{HOST.HOST} have replication lag more {$MAX_REPLICA_DELAY_DISTRIBUTED_QUERIES} sec</name>
-            <correlation_mode>0</correlation_mode>
-            <correlation_tag/>
             <url>https://clickhouse.tech/docs/en/operations/settings/settings/#settings-max_replica_delay_for_distributed_queries</url>
             <status>0</status>
             <priority>4</priority>
@@ -2144,67 +1928,43 @@ Data is written to target *MergreTree tables asynchronously. When inserted in th
 &#13;
 Check disks and networks on monitored ClickHouse servers</description>
             <type>0</type>
-            <manual_close>1</manual_close>
             <dependencies/>
-            <tags/>
         </trigger>
         <trigger>
             <expression>{Clickhouse:ch_params[HTTPConnection].last()} &gt;= {$MAX_HTTP_CONNECTIONS}</expression>
-            <recovery_mode>0</recovery_mode>
-            <recovery_expression/>
             <name>{HOST.HOST} HTTP connections &gt;= {$MAX_HTTP_CONNECTIONS}</name>
-            <correlation_mode>0</correlation_mode>
-            <correlation_tag/>
             <url>https://clickhouse.tech/docs/en/operations/server_settings/settings/#max-concurrent-queries</url>
             <status>0</status>
             <priority>2</priority>
             <description>The clickhouse is adapted to run not a very large number of parallel requests, not every HTTP connection means a running sql request, but a large number of open tcp connections can cause a spike in sudden sql requests, resulting in performance degradation.</description>
             <type>0</type>
-            <manual_close>0</manual_close>
             <dependencies/>
-            <tags/>
         </trigger>
         <trigger>
             <expression>{Clickhouse:ch_params[MaxPartCountForPartition].last()} &gt;= {$MAX_PARTS_PER_PARTITION} * 0.9</expression>
-            <recovery_mode>0</recovery_mode>
-            <recovery_expression/>
             <name>{HOST.HOST} MergeTree parts 90% of {$MAX_PARTS_PER_PARTITION}, please decrease INSERT queries frequency</name>
-            <correlation_mode>0</correlation_mode>
-            <correlation_tag/>
             <url/>
             <status>0</status>
             <priority>4</priority>
             <description>Clickhouse MergeTree table engine split each INSERT query to partitions (PARTITION BY expression) and add one or more PARTS per INSERT inside each partition, after that background merge process run, and when you have too much unmerged parts inside partition, SELECT queries performance can significate degrade, so clickhouse try delay insert, or abort it</description>
             <type>0</type>
-            <manual_close>0</manual_close>
             <dependencies/>
-            <tags/>
         </trigger>
         <trigger>
             <expression>{Clickhouse:ch_params[MySQLConnection].last()} &gt;= {$MAX_MYSQL_CONNECTIONS}</expression>
-            <recovery_mode>0</recovery_mode>
-            <recovery_expression/>
             <name>{HOST.HOST} MySQL connections &gt;= {$MAX_MYSQL_CONNECTIONS}</name>
-            <correlation_mode>0</correlation_mode>
-            <correlation_tag/>
             <url>https://clickhouse.tech/docs/en/operations/server_settings/settings/#max-concurrent-queries</url>
             <status>0</status>
             <priority>2</priority>
             <description>The clickhouse is adapted to run not a very large number of parallel requests, not every MySQL connection means a running sql request, but a large number of open tcp connections can cause a spike in sudden sql requests, resulting in performance degradation.</description>
             <type>0</type>
-            <manual_close>0</manual_close>
             <dependencies/>
-            <tags/>
         </trigger>
         <trigger>
             <expression>{Clickhouse:ch_params[InsertQuery].last()}&gt;0&#13;
 and&#13;
-( {Clickhouse:ch_params[InsertedRows].last()} / {Clickhouse:ch_params[InsertQuery].last()} ) &lt;= {$MIN_INSERTED_ROWS_PER_QUERY}</expression>
-            <recovery_mode>0</recovery_mode>
-            <recovery_expression/>
+( {Clickhouse:ch_params[InsertedRows].delta(#1)} / {Clickhouse:ch_params[InsertQuery].last()} ) &lt;= {$MIN_INSERTED_ROWS_PER_QUERY}</expression>
             <name>{HOST.HOST} please increase inserted rows per INSERT query</name>
-            <correlation_mode>0</correlation_mode>
-            <correlation_tag/>
             <url>https://clickhouse.tech/docs/en/introduction/performance/#performance-when-inserting-data</url>
             <status>0</status>
             <priority>4</priority>
@@ -2218,17 +1978,11 @@ or &#13;
 https://github.com/VKCOM/kittenhouse
             </description>
             <type>0</type>
-            <manual_close>0</manual_close>
             <dependencies/>
-            <tags/>
         </trigger>
         <trigger>
             <expression>{Clickhouse:ch_params[Query].last(3m)} &gt;= 0.9 * {$MAX_CONCURRENT_QUERIES}</expression>
-            <recovery_mode>0</recovery_mode>
-            <recovery_expression/>
             <name>{HOST.HOST} running queries 90% of {$MAX_CONCURRENT_QUERIES}</name>
-            <correlation_mode>0</correlation_mode>
-            <correlation_tag/>
             <url>https://clickhouse.tech/docs/en/operations/server_settings/settings/#max-concurrent-queries</url>
             <status>0</status>
             <priority>4</priority>
@@ -2240,25 +1994,17 @@ Look at following documentation parts &#13;
 https://clickhouse.tech/docs/en/operations/settings/query_complexity/&#13;
 https://clickhouse.tech/docs/en/operations/quotas/</description>
             <type>0</type>
-            <manual_close>1</manual_close>
             <dependencies/>
-            <tags/>
         </trigger>
         <trigger>
             <expression>{Clickhouse:ch_params[TCPConnection].last()} &gt;= {$MAX_TCP_CONNECTIONS}</expression>
-            <recovery_mode>0</recovery_mode>
-            <recovery_expression/>
             <name>{HOST.HOST} TCP connections &gt;= {$MAX_TCP_CONNECTIONS}</name>
-            <correlation_mode>0</correlation_mode>
-            <correlation_tag/>
             <url>https://clickhouse.tech/docs/en/operations/server_settings/settings/#max-connections</url>
             <status>0</status>
             <priority>2</priority>
             <description>The clickhouse is adapted to run not a very large number of parallel requests, not every tcp connection means a running sql request, but a large number of open tcp connections can cause a spike in sudden sql requests, resulting in performance degradation.</description>
             <type>0</type>
-            <manual_close>0</manual_close>
             <dependencies/>
-            <tags/>
         </trigger>
     </triggers>
     <graphs>

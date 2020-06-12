@@ -7,7 +7,7 @@ RUN curl -o dockerize-linux-amd64-$DOCKERIZE_VERSION.tar.gz -sL https://github.c
     && tar -C /usr/local/bin -xzvf dockerize-linux-amd64-$DOCKERIZE_VERSION.tar.gz \
     && rm dockerize-linux-amd64-$DOCKERIZE_VERSION.tar.gz
 
-ENV ZBX_AGENT_VERSION=3.4
+ENV ZBX_AGENT_VERSION=3.0
 ENV ZBX_AGENT_DISTRO=stretch
 RUN curl -o zabbix-release_${ZBX_AGENT_VERSION}-1+${ZBX_AGENT_DISTRO}_all.deb -sL https://repo.zabbix.com/zabbix/${ZBX_AGENT_VERSION}/debian/pool/main/z/zabbix-release/zabbix-release_${ZBX_AGENT_VERSION}-1+${ZBX_AGENT_DISTRO}_all.deb \
   && apt-get update \

@@ -1,5 +1,5 @@
 # Zabbix template for ClickHouse
-Required Zabbix Server version - 3.4+
+Required Zabbix Server version - 3.0+
 For zabbix 5.0+ please use [official Zabbix ClickHouse integration used http_agent](https://www.zabbix.com/integrations/clickhouse) 
 
 How to set up server with Zabbix agent:
