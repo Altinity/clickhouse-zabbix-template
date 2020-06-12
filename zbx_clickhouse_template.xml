@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <zabbix_export>
     <version>3.0</version>
-    <date>2020-06-12T02:42:44Z</date>
+    <date>2020-06-12T08:20:20Z</date>
     <groups>
         <group>
             <name>Clickhouse servers</name>
@@ -27,9 +27,9 @@
                     <name>delayed insert queries</name>
                     <type>0</type>
                     <snmp_community/>
+                    <multiplier>0</multiplier>
                     <snmp_oid/>
                     <key>ch_params[DelayedInserts]</key>
-                    <multiplier>0</multiplier><delta>0</delta><formula>1</formula><delay_flex/><data_type>0</data_type>
                     <delay>30</delay>
                     <history>90</history>
                     <trends>365</trends>
@@ -37,6 +37,7 @@
                     <value_type>3</value_type>
                     <allowed_hosts/>
                     <units/>
+                    <delta>0</delta>
                     <snmpv3_contextname/>
                     <snmpv3_securityname/>
                     <snmpv3_securitylevel>0</snmpv3_securitylevel>
@@ -44,8 +45,11 @@
                     <snmpv3_authpassphrase/>
                     <snmpv3_privprotocol>0</snmpv3_privprotocol>
                     <snmpv3_privpassphrase/>
+                    <formula>1</formula>
+                    <delay_flex/>
                     <params/>
                     <ipmi_sensor/>
+                    <data_type>0</data_type>
                     <authtype>0</authtype>
                     <username/>
                     <password/>
@@ -66,9 +70,9 @@
                     <name>data directory size</name>
                     <type>0</type>
                     <snmp_community/>
+                    <multiplier>0</multiplier>
                     <snmp_oid/>
                     <key>ch_params[DiskUsage]</key>
-                    <multiplier>0</multiplier><delta>0</delta><formula>1</formula><delay_flex/><data_type>0</data_type>
                     <delay>30</delay>
                     <history>90</history>
                     <trends>365</trends>
@@ -76,6 +80,7 @@
                     <value_type>3</value_type>
                     <allowed_hosts/>
                     <units>B</units>
+                    <delta>0</delta>
                     <snmpv3_contextname/>
                     <snmpv3_securityname/>
                     <snmpv3_securitylevel>0</snmpv3_securitylevel>
@@ -83,8 +88,11 @@
                     <snmpv3_authpassphrase/>
                     <snmpv3_privprotocol>0</snmpv3_privprotocol>
                     <snmpv3_privpassphrase/>
+                    <formula>1</formula>
+                    <delay_flex/>
                     <params/>
                     <ipmi_sensor/>
+                    <data_type>0</data_type>
                     <authtype>0</authtype>
                     <username/>
                     <password/>
@@ -105,9 +113,9 @@
                     <name>distributed connection fail after all retries finished</name>
                     <type>0</type>
                     <snmp_community/>
+                    <multiplier>0</multiplier>
                     <snmp_oid/>
                     <key>ch_params[DistributedConnectionFailAtAll]</key>
-                    <multiplier>0</multiplier><delta>0</delta><formula>1</formula><delay_flex/><data_type>0</data_type>
                     <delay>30</delay>
                     <history>90</history>
                     <trends>365</trends>
@@ -115,6 +123,7 @@
                     <value_type>3</value_type>
                     <allowed_hosts/>
                     <units/>
+                    <delta>2</delta>
                     <snmpv3_contextname/>
                     <snmpv3_securityname/>
                     <snmpv3_securitylevel>0</snmpv3_securitylevel>
@@ -122,8 +131,11 @@
                     <snmpv3_authpassphrase/>
                     <snmpv3_privprotocol>0</snmpv3_privprotocol>
                     <snmpv3_privpassphrase/>
+                    <formula>1</formula>
+                    <delay_flex/>
                     <params/>
                     <ipmi_sensor/>
+                    <data_type>0</data_type>
                     <authtype>0</authtype>
                     <username/>
                     <password/>
@@ -144,9 +156,9 @@
                     <name>distributed connection fail with retry</name>
                     <type>0</type>
                     <snmp_community/>
+                    <multiplier>0</multiplier>
                     <snmp_oid/>
                     <key>ch_params[DistributedConnectionFailTry]</key>
-                    <multiplier>0</multiplier><delta>0</delta><formula>1</formula><delay_flex/><data_type>0</data_type>
                     <delay>30</delay>
                     <history>90</history>
                     <trends>365</trends>
@@ -154,6 +166,7 @@
                     <value_type>3</value_type>
                     <allowed_hosts/>
                     <units/>
+                    <delta>2</delta>
                     <snmpv3_contextname/>
                     <snmpv3_securityname/>
                     <snmpv3_securitylevel>0</snmpv3_securitylevel>
@@ -161,8 +174,11 @@
                     <snmpv3_authpassphrase/>
                     <snmpv3_privprotocol>0</snmpv3_privprotocol>
                     <snmpv3_privpassphrase/>
+                    <formula>1</formula>
+                    <delay_flex/>
                     <params/>
                     <ipmi_sensor/>
+                    <data_type>0</data_type>
                     <authtype>0</authtype>
                     <username/>
                     <password/>
@@ -183,9 +199,9 @@
                     <name>distributed pending files</name>
                     <type>0</type>
                     <snmp_community/>
+                    <multiplier>0</multiplier>
                     <snmp_oid/>
                     <key>ch_params[DistributedFilesToInsert]</key>
-                    <multiplier>0</multiplier><delta>0</delta><formula>1</formula><delay_flex/><data_type>0</data_type>
                     <delay>30</delay>
                     <history>90</history>
                     <trends>365</trends>
@@ -193,6 +209,7 @@
                     <value_type>3</value_type>
                     <allowed_hosts/>
                     <units/>
+                    <delta>0</delta>
                     <snmpv3_contextname/>
                     <snmpv3_securityname/>
                     <snmpv3_securitylevel>0</snmpv3_securitylevel>
@@ -200,8 +217,11 @@
                     <snmpv3_authpassphrase/>
                     <snmpv3_privprotocol>0</snmpv3_privprotocol>
                     <snmpv3_privpassphrase/>
+                    <formula>1</formula>
+                    <delay_flex/>
                     <params/>
                     <ipmi_sensor/>
+                    <data_type>0</data_type>
                     <authtype>0</authtype>
                     <username/>
                     <password/>
@@ -222,9 +242,9 @@
                     <name>distributed connections</name>
                     <type>0</type>
                     <snmp_community/>
+                    <multiplier>0</multiplier>
                     <snmp_oid/>
                     <key>ch_params[DistributedSend]</key>
-                    <multiplier>0</multiplier><delta>0</delta><formula>1</formula><delay_flex/><data_type>0</data_type>
                     <delay>30</delay>
                     <history>90</history>
                     <trends>365</trends>
@@ -232,6 +252,7 @@
                     <value_type>3</value_type>
                     <allowed_hosts/>
                     <units/>
+                    <delta>0</delta>
                     <snmpv3_contextname/>
                     <snmpv3_securityname/>
                     <snmpv3_securitylevel>0</snmpv3_securitylevel>
@@ -239,8 +260,11 @@
                     <snmpv3_authpassphrase/>
                     <snmpv3_privprotocol>0</snmpv3_privprotocol>
                     <snmpv3_privpassphrase/>
+                    <formula>1</formula>
+                    <delay_flex/>
                     <params/>
                     <ipmi_sensor/>
+                    <data_type>0</data_type>
                     <authtype>0</authtype>
                     <username/>
                     <password/>
@@ -261,9 +285,9 @@
                     <name>dns errors available from 20.3</name>
                     <type>0</type>
                     <snmp_community/>
+                    <multiplier>0</multiplier>
                     <snmp_oid/>
                     <key>ch_params[DNSError]</key>
-                    <multiplier>0</multiplier><delta>0</delta><formula>1</formula><delay_flex/><data_type>0</data_type>
                     <delay>30</delay>
                     <history>90</history>
                     <trends>365</trends>
@@ -271,6 +295,7 @@
                     <value_type>3</value_type>
                     <allowed_hosts/>
                     <units/>
+                    <delta>2</delta>
                     <snmpv3_contextname/>
                     <snmpv3_securityname/>
                     <snmpv3_securitylevel>0</snmpv3_securitylevel>
@@ -278,8 +303,11 @@
                     <snmpv3_authpassphrase/>
                     <snmpv3_privprotocol>0</snmpv3_privprotocol>
                     <snmpv3_privpassphrase/>
+                    <formula>1</formula>
+                    <delay_flex/>
                     <params/>
                     <ipmi_sensor/>
+                    <data_type>0</data_type>
                     <authtype>0</authtype>
                     <username/>
                     <password/>
@@ -300,9 +328,9 @@
                     <name>current HTTP connections</name>
                     <type>0</type>
                     <snmp_community/>
+                    <multiplier>0</multiplier>
                     <snmp_oid/>
                     <key>ch_params[HTTPConnection]</key>
-                    <multiplier>0</multiplier><delta>0</delta><formula>1</formula><delay_flex/><data_type>0</data_type>
                     <delay>30</delay>
                     <history>90</history>
                     <trends>365</trends>
@@ -310,6 +338,7 @@
                     <value_type>3</value_type>
                     <allowed_hosts/>
                     <units/>
+                    <delta>0</delta>
                     <snmpv3_contextname/>
                     <snmpv3_securityname/>
                     <snmpv3_securitylevel>0</snmpv3_securitylevel>
@@ -317,8 +346,11 @@
                     <snmpv3_authpassphrase/>
                     <snmpv3_privprotocol>0</snmpv3_privprotocol>
                     <snmpv3_privpassphrase/>
+                    <formula>1</formula>
+                    <delay_flex/>
                     <params/>
                     <ipmi_sensor/>
+                    <data_type>0</data_type>
                     <authtype>0</authtype>
                     <username/>
                     <password/>
@@ -339,9 +371,9 @@
                     <name>inserted bytes per second</name>
                     <type>0</type>
                     <snmp_community/>
+                    <multiplier>0</multiplier>
                     <snmp_oid/>
                     <key>ch_params[InsertedBytes]</key>
-                    <multiplier>0</multiplier><delta>0</delta><formula>1</formula><delay_flex/><data_type>0</data_type>
                     <delay>30</delay>
                     <history>90</history>
                     <trends>365</trends>
@@ -349,6 +381,7 @@
                     <value_type>3</value_type>
                     <allowed_hosts/>
                     <units>B</units>
+                    <delta>1</delta>
                     <snmpv3_contextname/>
                     <snmpv3_securityname/>
                     <snmpv3_securitylevel>0</snmpv3_securitylevel>
@@ -356,8 +389,11 @@
                     <snmpv3_authpassphrase/>
                     <snmpv3_privprotocol>0</snmpv3_privprotocol>
                     <snmpv3_privpassphrase/>
+                    <formula>1</formula>
+                    <delay_flex/>
                     <params/>
                     <ipmi_sensor/>
+                    <data_type>0</data_type>
                     <authtype>0</authtype>
                     <username/>
                     <password/>
@@ -378,9 +414,9 @@
                     <name>inserted rows per second</name>
                     <type>0</type>
                     <snmp_community/>
+                    <multiplier>0</multiplier>
                     <snmp_oid/>
                     <key>ch_params[InsertedRows]</key>
-                    <multiplier>0</multiplier><delta>0</delta><formula>1</formula><delay_flex/><data_type>0</data_type>
                     <delay>30</delay>
                     <history>90</history>
                     <trends>365</trends>
@@ -388,6 +424,7 @@
                     <value_type>3</value_type>
                     <allowed_hosts/>
                     <units/>
+                    <delta>1</delta>
                     <snmpv3_contextname/>
                     <snmpv3_securityname/>
                     <snmpv3_securitylevel>0</snmpv3_securitylevel>
@@ -395,8 +432,11 @@
                     <snmpv3_authpassphrase/>
                     <snmpv3_privprotocol>0</snmpv3_privprotocol>
                     <snmpv3_privpassphrase/>
+                    <formula>1</formula>
+                    <delay_flex/>
                     <params/>
                     <ipmi_sensor/>
+                    <data_type>0</data_type>
                     <authtype>0</authtype>
                     <username/>
                     <password/>
@@ -417,9 +457,9 @@
                     <name>processed INSERT queries</name>
                     <type>0</type>
                     <snmp_community/>
+                    <multiplier>0</multiplier>
                     <snmp_oid/>
                     <key>ch_params[InsertQuery]</key>
-                    <multiplier>0</multiplier><delta>0</delta><formula>1</formula><delay_flex/><data_type>0</data_type>
                     <delay>30</delay>
                     <history>90</history>
                     <trends>365</trends>
@@ -427,6 +467,7 @@
                     <value_type>3</value_type>
                     <allowed_hosts/>
                     <units/>
+                    <delta>0</delta>
                     <snmpv3_contextname/>
                     <snmpv3_securityname/>
                     <snmpv3_securitylevel>0</snmpv3_securitylevel>
@@ -434,8 +475,11 @@
                     <snmpv3_authpassphrase/>
                     <snmpv3_privprotocol>0</snmpv3_privprotocol>
                     <snmpv3_privpassphrase/>
+                    <formula>1</formula>
+                    <delay_flex/>
                     <params/>
                     <ipmi_sensor/>
+                    <data_type>0</data_type>
                     <authtype>0</authtype>
                     <username/>
                     <password/>
@@ -456,9 +500,9 @@
                     <name>the longest currently running query time</name>
                     <type>0</type>
                     <snmp_community/>
+                    <multiplier>0</multiplier>
                     <snmp_oid/>
                     <key>ch_params[LongestRunningQuery]</key>
-                    <multiplier>0</multiplier><delta>0</delta><formula>1</formula><delay_flex/><data_type>0</data_type>
                     <delay>30</delay>
                     <history>90</history>
                     <trends>365</trends>
@@ -466,6 +510,7 @@
                     <value_type>0</value_type>
                     <allowed_hosts/>
                     <units>s</units>
+                    <delta>0</delta>
                     <snmpv3_contextname/>
                     <snmpv3_securityname/>
                     <snmpv3_securitylevel>0</snmpv3_securitylevel>
@@ -473,8 +518,11 @@
                     <snmpv3_authpassphrase/>
                     <snmpv3_privprotocol>0</snmpv3_privprotocol>
                     <snmpv3_privpassphrase/>
+                    <formula>1</formula>
+                    <delay_flex/>
                     <params/>
                     <ipmi_sensor/>
+                    <data_type>0</data_type>
                     <authtype>0</authtype>
                     <username/>
                     <password/>
@@ -495,9 +543,9 @@
                     <name>max count of parts per partition across all tables</name>
                     <type>0</type>
                     <snmp_community/>
+                    <multiplier>0</multiplier>
                     <snmp_oid/>
                     <key>ch_params[MaxPartCountForPartition]</key>
-                    <multiplier>0</multiplier><delta>0</delta><formula>1</formula><delay_flex/><data_type>0</data_type>
                     <delay>30</delay>
                     <history>90</history>
                     <trends>365</trends>
@@ -505,6 +553,7 @@
                     <value_type>3</value_type>
                     <allowed_hosts/>
                     <units/>
+                    <delta>0</delta>
                     <snmpv3_contextname/>
                     <snmpv3_securityname/>
                     <snmpv3_securitylevel>0</snmpv3_securitylevel>
@@ -512,8 +561,11 @@
                     <snmpv3_authpassphrase/>
                     <snmpv3_privprotocol>0</snmpv3_privprotocol>
                     <snmpv3_privpassphrase/>
+                    <formula>1</formula>
+                    <delay_flex/>
                     <params/>
                     <ipmi_sensor/>
+                    <data_type>0</data_type>
                     <authtype>0</authtype>
                     <username/>
                     <password/>
@@ -534,9 +586,9 @@
                     <name>memory for background merges</name>
                     <type>0</type>
                     <snmp_community/>
+                    <multiplier>0</multiplier>
                     <snmp_oid/>
                     <key>ch_params[MemoryTrackingForMerges]</key>
-                    <multiplier>0</multiplier><delta>0</delta><formula>1</formula><delay_flex/><data_type>0</data_type>
                     <delay>30</delay>
                     <history>90</history>
                     <trends>365</trends>
@@ -544,6 +596,7 @@
                     <value_type>3</value_type>
                     <allowed_hosts/>
                     <units>B</units>
+                    <delta>0</delta>
                     <snmpv3_contextname/>
                     <snmpv3_securityname/>
                     <snmpv3_securitylevel>0</snmpv3_securitylevel>
@@ -551,8 +604,11 @@
                     <snmpv3_authpassphrase/>
                     <snmpv3_privprotocol>0</snmpv3_privprotocol>
                     <snmpv3_privpassphrase/>
+                    <formula>1</formula>
+                    <delay_flex/>
                     <params/>
                     <ipmi_sensor/>
+                    <data_type>0</data_type>
                     <authtype>0</authtype>
                     <username/>
                     <password/>
@@ -573,9 +629,9 @@
                     <name>memory for backround moves</name>
                     <type>0</type>
                     <snmp_community/>
+                    <multiplier>0</multiplier>
                     <snmp_oid/>
                     <key>ch_params[MemoryTrackingInBackgroundMoveProcessingPool]</key>
-                    <multiplier>0</multiplier><delta>0</delta><formula>1</formula><delay_flex/><data_type>0</data_type>
                     <delay>30</delay>
                     <history>90</history>
                     <trends>365</trends>
@@ -583,6 +639,7 @@
                     <value_type>3</value_type>
                     <allowed_hosts/>
                     <units>B</units>
+                    <delta>0</delta>
                     <snmpv3_contextname/>
                     <snmpv3_securityname/>
                     <snmpv3_securitylevel>0</snmpv3_securitylevel>
@@ -590,8 +647,11 @@
                     <snmpv3_authpassphrase/>
                     <snmpv3_privprotocol>0</snmpv3_privprotocol>
                     <snmpv3_privpassphrase/>
+                    <formula>1</formula>
+                    <delay_flex/>
                     <params/>
                     <ipmi_sensor/>
+                    <data_type>0</data_type>
                     <authtype>0</authtype>
                     <username/>
                     <password/>
@@ -612,9 +672,9 @@
                     <name>memory for background merges, mutations and fetches.</name>
                     <type>0</type>
                     <snmp_community/>
+                    <multiplier>0</multiplier>
                     <snmp_oid/>
                     <key>ch_params[MemoryTrackingInBackgroundProcessingPool]</key>
-                    <multiplier>0</multiplier><delta>0</delta><formula>1</formula><delay_flex/><data_type>0</data_type>
                     <delay>30</delay>
                     <history>90</history>
                     <trends>365</trends>
@@ -622,6 +682,7 @@
                     <value_type>3</value_type>
                     <allowed_hosts/>
                     <units>B</units>
+                    <delta>0</delta>
                     <snmpv3_contextname/>
                     <snmpv3_securityname/>
                     <snmpv3_securitylevel>0</snmpv3_securitylevel>
@@ -629,8 +690,11 @@
                     <snmpv3_authpassphrase/>
                     <snmpv3_privprotocol>0</snmpv3_privprotocol>
                     <snmpv3_privpassphrase/>
+                    <formula>1</formula>
+                    <delay_flex/>
                     <params/>
                     <ipmi_sensor/>
+                    <data_type>0</data_type>
                     <authtype>0</authtype>
                     <username/>
                     <password/>
@@ -651,9 +715,9 @@
                     <name>memory for bookkeeping tasks of Replicated tables.</name>
                     <type>0</type>
                     <snmp_community/>
+                    <multiplier>0</multiplier>
                     <snmp_oid/>
                     <key>ch_params[MemoryTrackingInBackgroundSchedulePool]</key>
-                    <multiplier>0</multiplier><delta>0</delta><formula>1</formula><delay_flex/><data_type>0</data_type>
                     <delay>30</delay>
                     <history>90</history>
                     <trends>365</trends>
@@ -661,6 +725,7 @@
                     <value_type>3</value_type>
                     <allowed_hosts/>
                     <units>B</units>
+                    <delta>0</delta>
                     <snmpv3_contextname/>
                     <snmpv3_securityname/>
                     <snmpv3_securitylevel>0</snmpv3_securitylevel>
@@ -668,8 +733,11 @@
                     <snmpv3_authpassphrase/>
                     <snmpv3_privprotocol>0</snmpv3_privprotocol>
                     <snmpv3_privpassphrase/>
+                    <formula>1</formula>
+                    <delay_flex/>
                     <params/>
                     <ipmi_sensor/>
+                    <data_type>0</data_type>
                     <authtype>0</authtype>
                     <username/>
                     <password/>
@@ -690,9 +758,9 @@
                     <name>memory used by queries</name>
                     <type>0</type>
                     <snmp_community/>
+                    <multiplier>0</multiplier>
                     <snmp_oid/>
                     <key>ch_params[MemoryTracking]</key>
-                    <multiplier>0</multiplier><delta>0</delta><formula>1</formula><delay_flex/><data_type>0</data_type>
                     <delay>30</delay>
                     <history>90</history>
                     <trends>365</trends>
@@ -700,6 +768,7 @@
                     <value_type>3</value_type>
                     <allowed_hosts/>
                     <units>B</units>
+                    <delta>0</delta>
                     <snmpv3_contextname/>
                     <snmpv3_securityname/>
                     <snmpv3_securitylevel>0</snmpv3_securitylevel>
@@ -707,8 +776,11 @@
                     <snmpv3_authpassphrase/>
                     <snmpv3_privprotocol>0</snmpv3_privprotocol>
                     <snmpv3_privpassphrase/>
+                    <formula>1</formula>
+                    <delay_flex/>
                     <params/>
                     <ipmi_sensor/>
+                    <data_type>0</data_type>
                     <authtype>0</authtype>
                     <username/>
                     <password/>
@@ -729,9 +801,9 @@
                     <name>merged rows per second</name>
                     <type>0</type>
                     <snmp_community/>
+                    <multiplier>0</multiplier>
                     <snmp_oid/>
                     <key>ch_params[MergedRows]</key>
-                    <multiplier>0</multiplier><delta>0</delta><formula>1</formula><delay_flex/><data_type>0</data_type>
                     <delay>30</delay>
                     <history>90</history>
                     <trends>365</trends>
@@ -739,6 +811,7 @@
                     <value_type>3</value_type>
                     <allowed_hosts/>
                     <units/>
+                    <delta>1</delta>
                     <snmpv3_contextname/>
                     <snmpv3_securityname/>
                     <snmpv3_securitylevel>0</snmpv3_securitylevel>
@@ -746,8 +819,11 @@
                     <snmpv3_authpassphrase/>
                     <snmpv3_privprotocol>0</snmpv3_privprotocol>
                     <snmpv3_privpassphrase/>
+                    <formula>1</formula>
+                    <delay_flex/>
                     <params/>
                     <ipmi_sensor/>
+                    <data_type>0</data_type>
                     <authtype>0</authtype>
                     <username/>
                     <password/>
@@ -768,9 +844,9 @@
                     <name>merged uncompressed bytes per second</name>
                     <type>0</type>
                     <snmp_community/>
+                    <multiplier>0</multiplier>
                     <snmp_oid/>
                     <key>ch_params[MergedUncompressedBytes]</key>
-                    <multiplier>0</multiplier><delta>0</delta><formula>1</formula><delay_flex/><data_type>0</data_type>
                     <delay>30</delay>
                     <history>90</history>
                     <trends>365</trends>
@@ -778,6 +854,7 @@
                     <value_type>3</value_type>
                     <allowed_hosts/>
                     <units>B</units>
+                    <delta>1</delta>
                     <snmpv3_contextname/>
                     <snmpv3_securityname/>
                     <snmpv3_securitylevel>0</snmpv3_securitylevel>
@@ -785,8 +862,11 @@
                     <snmpv3_authpassphrase/>
                     <snmpv3_privprotocol>0</snmpv3_privprotocol>
                     <snmpv3_privpassphrase/>
+                    <formula>1</formula>
+                    <delay_flex/>
                     <params/>
                     <ipmi_sensor/>
+                    <data_type>0</data_type>
                     <authtype>0</authtype>
                     <username/>
                     <password/>
@@ -807,9 +887,9 @@
                     <name>current MySQL connections</name>
                     <type>0</type>
                     <snmp_community/>
+                    <multiplier>0</multiplier>
                     <snmp_oid/>
                     <key>ch_params[MySQLConnection]</key>
-                    <multiplier>0</multiplier><delta>0</delta><formula>1</formula><delay_flex/><data_type>0</data_type>
                     <delay>30</delay>
                     <history>90</history>
                     <trends>365</trends>
@@ -817,6 +897,7 @@
                     <value_type>3</value_type>
                     <allowed_hosts/>
                     <units/>
+                    <delta>0</delta>
                     <snmpv3_contextname/>
                     <snmpv3_securityname/>
                     <snmpv3_securitylevel>0</snmpv3_securitylevel>
@@ -824,8 +905,11 @@
                     <snmpv3_authpassphrase/>
                     <snmpv3_privprotocol>0</snmpv3_privprotocol>
                     <snmpv3_privpassphrase/>
+                    <formula>1</formula>
+                    <delay_flex/>
                     <params/>
                     <ipmi_sensor/>
+                    <data_type>0</data_type>
                     <authtype>0</authtype>
                     <username/>
                     <password/>
@@ -846,9 +930,9 @@
                     <name>network errors, i.e. DNS resolve</name>
                     <type>0</type>
                     <snmp_community/>
+                    <multiplier>0</multiplier>
                     <snmp_oid/>
                     <key>ch_params[NetworkErrors]</key>
-                    <multiplier>0</multiplier><delta>0</delta><formula>1</formula><delay_flex/><data_type>0</data_type>
                     <delay>30</delay>
                     <history>90</history>
                     <trends>365</trends>
@@ -856,6 +940,7 @@
                     <value_type>3</value_type>
                     <allowed_hosts/>
                     <units/>
+                    <delta>2</delta>
                     <snmpv3_contextname/>
                     <snmpv3_securityname/>
                     <snmpv3_securitylevel>0</snmpv3_securitylevel>
@@ -863,8 +948,11 @@
                     <snmpv3_authpassphrase/>
                     <snmpv3_privprotocol>0</snmpv3_privprotocol>
                     <snmpv3_privpassphrase/>
+                    <formula>1</formula>
+                    <delay_flex/>
                     <params/>
                     <ipmi_sensor/>
+                    <data_type>0</data_type>
                     <authtype>0</authtype>
                     <username/>
                     <password/>
@@ -885,9 +973,9 @@
                     <name>current running queries</name>
                     <type>0</type>
                     <snmp_community/>
+                    <multiplier>0</multiplier>
                     <snmp_oid/>
                     <key>ch_params[Query]</key>
-                    <multiplier>0</multiplier><delta>0</delta><formula>1</formula><delay_flex/><data_type>0</data_type>
                     <delay>30</delay>
                     <history>90</history>
                     <trends>365</trends>
@@ -895,6 +983,7 @@
                     <value_type>3</value_type>
                     <allowed_hosts/>
                     <units/>
+                    <delta>0</delta>
                     <snmpv3_contextname/>
                     <snmpv3_securityname/>
                     <snmpv3_securitylevel>0</snmpv3_securitylevel>
@@ -902,8 +991,11 @@
                     <snmpv3_authpassphrase/>
                     <snmpv3_privprotocol>0</snmpv3_privprotocol>
                     <snmpv3_privpassphrase/>
+                    <formula>1</formula>
+                    <delay_flex/>
                     <params/>
                     <ipmi_sensor/>
+                    <data_type>0</data_type>
                     <authtype>0</authtype>
                     <username/>
                     <password/>
@@ -924,9 +1016,9 @@
                     <name>read bytes per second</name>
                     <type>0</type>
                     <snmp_community/>
+                    <multiplier>0</multiplier>
                     <snmp_oid/>
                     <key>ch_params[ReadCompressedBytes]</key>
-                    <multiplier>0</multiplier><delta>0</delta><formula>1</formula><delay_flex/><data_type>0</data_type>
                     <delay>30</delay>
                     <history>90</history>
                     <trends>365</trends>
@@ -934,6 +1026,7 @@
                     <value_type>3</value_type>
                     <allowed_hosts/>
                     <units>B</units>
+                    <delta>1</delta>
                     <snmpv3_contextname/>
                     <snmpv3_securityname/>
                     <snmpv3_securitylevel>0</snmpv3_securitylevel>
@@ -941,8 +1034,11 @@
                     <snmpv3_authpassphrase/>
                     <snmpv3_privprotocol>0</snmpv3_privprotocol>
                     <snmpv3_privpassphrase/>
+                    <formula>1</formula>
+                    <delay_flex/>
                     <params/>
                     <ipmi_sensor/>
+                    <data_type>0</data_type>
                     <authtype>0</authtype>
                     <username/>
                     <password/>
@@ -963,9 +1059,9 @@
                     <name>Read-Only Replicas</name>
                     <type>0</type>
                     <snmp_community/>
+                    <multiplier>0</multiplier>
                     <snmp_oid/>
                     <key>ch_params[ReadonlyReplica]</key>
-                    <multiplier>0</multiplier><delta>0</delta><formula>1</formula><delay_flex/><data_type>0</data_type>
                     <delay>30</delay>
                     <history>90</history>
                     <trends>365</trends>
@@ -973,6 +1069,7 @@
                     <value_type>3</value_type>
                     <allowed_hosts/>
                     <units/>
+                    <delta>0</delta>
                     <snmpv3_contextname/>
                     <snmpv3_securityname/>
                     <snmpv3_securitylevel>0</snmpv3_securitylevel>
@@ -980,8 +1077,11 @@
                     <snmpv3_authpassphrase/>
                     <snmpv3_privprotocol>0</snmpv3_privprotocol>
                     <snmpv3_privpassphrase/>
+                    <formula>1</formula>
+                    <delay_flex/>
                     <params/>
                     <ipmi_sensor/>
+                    <data_type>0</data_type>
                     <authtype>0</authtype>
                     <username/>
                     <password/>
@@ -1002,9 +1102,9 @@
                     <name>read, pread, io_getevents, etc. syscalls in fly</name>
                     <type>0</type>
                     <snmp_community/>
+                    <multiplier>0</multiplier>
                     <snmp_oid/>
                     <key>ch_params[Read]</key>
-                    <multiplier>0</multiplier><delta>0</delta><formula>1</formula><delay_flex/><data_type>0</data_type>
                     <delay>30</delay>
                     <history>90</history>
                     <trends>365</trends>
@@ -1012,6 +1112,7 @@
                     <value_type>3</value_type>
                     <allowed_hosts/>
                     <units/>
+                    <delta>0</delta>
                     <snmpv3_contextname/>
                     <snmpv3_securityname/>
                     <snmpv3_securitylevel>0</snmpv3_securitylevel>
@@ -1019,8 +1120,11 @@
                     <snmpv3_authpassphrase/>
                     <snmpv3_privprotocol>0</snmpv3_privprotocol>
                     <snmpv3_privpassphrase/>
+                    <formula>1</formula>
+                    <delay_flex/>
                     <params/>
                     <ipmi_sensor/>
+                    <data_type>0</data_type>
                     <authtype>0</authtype>
                     <username/>
                     <password/>
@@ -1041,9 +1145,9 @@
                     <name>replica partial shutdown</name>
                     <type>0</type>
                     <snmp_community/>
+                    <multiplier>0</multiplier>
                     <snmp_oid/>
                     <key>ch_params[ReplicaPartialShutdown]</key>
-                    <multiplier>0</multiplier><delta>0</delta><formula>1</formula><delay_flex/><data_type>0</data_type>
                     <delay>30</delay>
                     <history>90</history>
                     <trends>365</trends>
@@ -1051,6 +1155,7 @@
                     <value_type>3</value_type>
                     <allowed_hosts/>
                     <units/>
+                    <delta>2</delta>
                     <snmpv3_contextname/>
                     <snmpv3_securityname/>
                     <snmpv3_securitylevel>0</snmpv3_securitylevel>
@@ -1058,8 +1163,11 @@
                     <snmpv3_authpassphrase/>
                     <snmpv3_privprotocol>0</snmpv3_privprotocol>
                     <snmpv3_privpassphrase/>
+                    <formula>1</formula>
+                    <delay_flex/>
                     <params/>
                     <ipmi_sensor/>
+                    <data_type>0</data_type>
                     <authtype>0</authtype>
                     <username/>
                     <password/>
@@ -1080,9 +1188,9 @@
                     <name>replication lag across all tables</name>
                     <type>0</type>
                     <snmp_community/>
+                    <multiplier>0</multiplier>
                     <snmp_oid/>
                     <key>ch_params[ReplicasMaxAbsoluteDelay]</key>
-                    <multiplier>0</multiplier><delta>0</delta><formula>1</formula><delay_flex/><data_type>0</data_type>
                     <delay>30</delay>
                     <history>90</history>
                     <trends>365</trends>
@@ -1090,6 +1198,7 @@
                     <value_type>3</value_type>
                     <allowed_hosts/>
                     <units>s</units>
+                    <delta>0</delta>
                     <snmpv3_contextname/>
                     <snmpv3_securityname/>
                     <snmpv3_securitylevel>0</snmpv3_securitylevel>
@@ -1097,8 +1206,11 @@
                     <snmpv3_authpassphrase/>
                     <snmpv3_privprotocol>0</snmpv3_privprotocol>
                     <snmpv3_privpassphrase/>
+                    <formula>1</formula>
+                    <delay_flex/>
                     <params/>
                     <ipmi_sensor/>
+                    <data_type>0</data_type>
                     <authtype>0</authtype>
                     <username/>
                     <password/>
@@ -1119,9 +1231,9 @@
                     <name>replication tasks in queue</name>
                     <type>0</type>
                     <snmp_community/>
+                    <multiplier>0</multiplier>
                     <snmp_oid/>
                     <key>ch_params[ReplicasSumQueueSize]</key>
-                    <multiplier>0</multiplier><delta>0</delta><formula>1</formula><delay_flex/><data_type>0</data_type>
                     <delay>30</delay>
                     <history>90</history>
                     <trends>365</trends>
@@ -1129,6 +1241,7 @@
                     <value_type>3</value_type>
                     <allowed_hosts/>
                     <units/>
+                    <delta>0</delta>
                     <snmpv3_contextname/>
                     <snmpv3_securityname/>
                     <snmpv3_securitylevel>0</snmpv3_securitylevel>
@@ -1136,8 +1249,11 @@
                     <snmpv3_authpassphrase/>
                     <snmpv3_privprotocol>0</snmpv3_privprotocol>
                     <snmpv3_privpassphrase/>
+                    <formula>1</formula>
+                    <delay_flex/>
                     <params/>
                     <ipmi_sensor/>
+                    <data_type>0</data_type>
                     <authtype>0</authtype>
                     <username/>
                     <password/>
@@ -1158,9 +1274,9 @@
                     <name>revision</name>
                     <type>0</type>
                     <snmp_community/>
+                    <multiplier>0</multiplier>
                     <snmp_oid/>
                     <key>ch_params[Revision]</key>
-                    <multiplier>0</multiplier><delta>0</delta><formula>1</formula><delay_flex/><data_type>0</data_type>
                     <delay>30</delay>
                     <history>90</history>
                     <trends>365</trends>
@@ -1168,6 +1284,7 @@
                     <value_type>3</value_type>
                     <allowed_hosts/>
                     <units/>
+                    <delta>0</delta>
                     <snmpv3_contextname/>
                     <snmpv3_securityname/>
                     <snmpv3_securitylevel>0</snmpv3_securitylevel>
@@ -1175,8 +1292,11 @@
                     <snmpv3_authpassphrase/>
                     <snmpv3_privprotocol>0</snmpv3_privprotocol>
                     <snmpv3_privpassphrase/>
+                    <formula>1</formula>
+                    <delay_flex/>
                     <params/>
                     <ipmi_sensor/>
+                    <data_type>0</data_type>
                     <authtype>0</authtype>
                     <username/>
                     <password/>
@@ -1197,9 +1317,9 @@
                     <name>parts read from disk per second</name>
                     <type>0</type>
                     <snmp_community/>
+                    <multiplier>0</multiplier>
                     <snmp_oid/>
                     <key>ch_params[SelectedParts]</key>
-                    <multiplier>0</multiplier><delta>0</delta><formula>1</formula><delay_flex/><data_type>0</data_type>
                     <delay>30</delay>
                     <history>90</history>
                     <trends>365</trends>
@@ -1207,6 +1327,7 @@
                     <value_type>3</value_type>
                     <allowed_hosts/>
                     <units/>
+                    <delta>1</delta>
                     <snmpv3_contextname/>
                     <snmpv3_securityname/>
                     <snmpv3_securitylevel>0</snmpv3_securitylevel>
@@ -1214,8 +1335,11 @@
                     <snmpv3_authpassphrase/>
                     <snmpv3_privprotocol>0</snmpv3_privprotocol>
                     <snmpv3_privpassphrase/>
+                    <formula>1</formula>
+                    <delay_flex/>
                     <params/>
                     <ipmi_sensor/>
+                    <data_type>0</data_type>
                     <authtype>0</authtype>
                     <username/>
                     <password/>
@@ -1236,9 +1360,9 @@
                     <name>processed SELECT queries</name>
                     <type>0</type>
                     <snmp_community/>
+                    <multiplier>0</multiplier>
                     <snmp_oid/>
                     <key>ch_params[SelectQuery]</key>
-                    <multiplier>0</multiplier><delta>0</delta><formula>1</formula><delay_flex/><data_type>0</data_type>
                     <delay>30</delay>
                     <history>90</history>
                     <trends>365</trends>
@@ -1246,6 +1370,7 @@
                     <value_type>3</value_type>
                     <allowed_hosts/>
                     <units/>
+                    <delta>0</delta>
                     <snmpv3_contextname/>
                     <snmpv3_securityname/>
                     <snmpv3_securitylevel>0</snmpv3_securitylevel>
@@ -1253,8 +1378,11 @@
                     <snmpv3_authpassphrase/>
                     <snmpv3_privprotocol>0</snmpv3_privprotocol>
                     <snmpv3_privpassphrase/>
+                    <formula>1</formula>
+                    <delay_flex/>
                     <params/>
                     <ipmi_sensor/>
+                    <data_type>0</data_type>
                     <authtype>0</authtype>
                     <username/>
                     <password/>
@@ -1275,9 +1403,9 @@
                     <name>current TCP connections</name>
                     <type>0</type>
                     <snmp_community/>
+                    <multiplier>0</multiplier>
                     <snmp_oid/>
                     <key>ch_params[TCPConnection]</key>
-                    <multiplier>0</multiplier><delta>0</delta><formula>1</formula><delay_flex/><data_type>0</data_type>
                     <delay>30</delay>
                     <history>90</history>
                     <trends>365</trends>
@@ -1285,6 +1413,7 @@
                     <value_type>3</value_type>
                     <allowed_hosts/>
                     <units/>
+                    <delta>0</delta>
                     <snmpv3_contextname/>
                     <snmpv3_securityname/>
                     <snmpv3_securitylevel>0</snmpv3_securitylevel>
@@ -1292,8 +1421,11 @@
                     <snmpv3_authpassphrase/>
                     <snmpv3_privprotocol>0</snmpv3_privprotocol>
                     <snmpv3_privpassphrase/>
+                    <formula>1</formula>
+                    <delay_flex/>
                     <params/>
                     <ipmi_sensor/>
+                    <data_type>0</data_type>
                     <authtype>0</authtype>
                     <username/>
                     <password/>
@@ -1314,9 +1446,9 @@
                     <name>clickhouse-server uptime</name>
                     <type>0</type>
                     <snmp_community/>
+                    <multiplier>0</multiplier>
                     <snmp_oid/>
                     <key>ch_params[Uptime]</key>
-                    <multiplier>0</multiplier><delta>0</delta><formula>1</formula><delay_flex/><data_type>0</data_type>
                     <delay>30</delay>
                     <history>90</history>
                     <trends>365</trends>
@@ -1324,6 +1456,7 @@
                     <value_type>3</value_type>
                     <allowed_hosts/>
                     <units>s</units>
+                    <delta>0</delta>
                     <snmpv3_contextname/>
                     <snmpv3_securityname/>
                     <snmpv3_securitylevel>0</snmpv3_securitylevel>
@@ -1331,8 +1464,11 @@
                     <snmpv3_authpassphrase/>
                     <snmpv3_privprotocol>0</snmpv3_privprotocol>
                     <snmpv3_privpassphrase/>
+                    <formula>1</formula>
+                    <delay_flex/>
                     <params/>
                     <ipmi_sensor/>
+                    <data_type>0</data_type>
                     <authtype>0</authtype>
                     <username/>
                     <password/>
@@ -1353,9 +1489,9 @@
                     <name>write, pwrite, io_getevents, etc. syscalls in fly</name>
                     <type>0</type>
                     <snmp_community/>
+                    <multiplier>0</multiplier>
                     <snmp_oid/>
                     <key>ch_params[Write]</key>
-                    <multiplier>0</multiplier><delta>0</delta><formula>1</formula><delay_flex/><data_type>0</data_type>
                     <delay>30</delay>
                     <history>90</history>
                     <trends>365</trends>
@@ -1363,6 +1499,7 @@
                     <value_type>3</value_type>
                     <allowed_hosts/>
                     <units/>
+                    <delta>0</delta>
                     <snmpv3_contextname/>
                     <snmpv3_securityname/>
                     <snmpv3_securitylevel>0</snmpv3_securitylevel>
@@ -1370,8 +1507,11 @@
                     <snmpv3_authpassphrase/>
                     <snmpv3_privprotocol>0</snmpv3_privprotocol>
                     <snmpv3_privpassphrase/>
+                    <formula>1</formula>
+                    <delay_flex/>
                     <params/>
                     <ipmi_sensor/>
+                    <data_type>0</data_type>
                     <authtype>0</authtype>
                     <username/>
                     <password/>
@@ -1392,9 +1532,9 @@
                     <name>Hardware exceptions in communication with ZooKeeper server</name>
                     <type>0</type>
                     <snmp_community/>
+                    <multiplier>0</multiplier>
                     <snmp_oid/>
                     <key>ch_params[ZooKeeperHardwareExceptions]</key>
-                    <multiplier>0</multiplier><delta>0</delta><formula>1</formula><delay_flex/><data_type>0</data_type>
                     <delay>30</delay>
                     <history>90</history>
                     <trends>365</trends>
@@ -1402,6 +1542,7 @@
                     <value_type>3</value_type>
                     <allowed_hosts/>
                     <units/>
+                    <delta>2</delta>
                     <snmpv3_contextname/>
                     <snmpv3_securityname/>
                     <snmpv3_securitylevel>0</snmpv3_securitylevel>
@@ -1409,8 +1550,11 @@
                     <snmpv3_authpassphrase/>
                     <snmpv3_privprotocol>0</snmpv3_privprotocol>
                     <snmpv3_privpassphrase/>
+                    <formula>1</formula>
+                    <delay_flex/>
                     <params/>
                     <ipmi_sensor/>
+                    <data_type>0</data_type>
                     <authtype>0</authtype>
                     <username/>
                     <password/>
@@ -1431,9 +1575,9 @@
                     <name>Other exceptions in communication with ZooKeeper server</name>
                     <type>0</type>
                     <snmp_community/>
+                    <multiplier>0</multiplier>
                     <snmp_oid/>
                     <key>ch_params[ZooKeeperOtherExceptions]</key>
-                    <multiplier>0</multiplier><delta>0</delta><formula>1</formula><delay_flex/><data_type>0</data_type>
                     <delay>30</delay>
                     <history>90</history>
                     <trends>365</trends>
@@ -1441,6 +1585,7 @@
                     <value_type>3</value_type>
                     <allowed_hosts/>
                     <units/>
+                    <delta>0</delta>
                     <snmpv3_contextname/>
                     <snmpv3_securityname/>
                     <snmpv3_securitylevel>0</snmpv3_securitylevel>
@@ -1448,8 +1593,11 @@
                     <snmpv3_authpassphrase/>
                     <snmpv3_privprotocol>0</snmpv3_privprotocol>
                     <snmpv3_privpassphrase/>
+                    <formula>1</formula>
+                    <delay_flex/>
                     <params/>
                     <ipmi_sensor/>
+                    <data_type>0</data_type>
                     <authtype>0</authtype>
                     <username/>
                     <password/>
@@ -1470,9 +1618,9 @@
                     <name>User exceptions in communication with ZooKeeper server</name>
                     <type>0</type>
                     <snmp_community/>
+                    <multiplier>0</multiplier>
                     <snmp_oid/>
                     <key>ch_params[ZooKeeperUserExceptions]</key>
-                    <multiplier>0</multiplier><delta>0</delta><formula>1</formula><delay_flex/><data_type>0</data_type>
                     <delay>30</delay>
                     <history>90</history>
                     <trends>365</trends>
@@ -1480,6 +1628,7 @@
                     <value_type>3</value_type>
                     <allowed_hosts/>
                     <units/>
+                    <delta>2</delta>
                     <snmpv3_contextname/>
                     <snmpv3_securityname/>
                     <snmpv3_securitylevel>0</snmpv3_securitylevel>
@@ -1487,8 +1636,11 @@
                     <snmpv3_authpassphrase/>
                     <snmpv3_privprotocol>0</snmpv3_privprotocol>
                     <snmpv3_privpassphrase/>
+                    <formula>1</formula>
+                    <delay_flex/>
                     <params/>
                     <ipmi_sensor/>
+                    <data_type>0</data_type>
                     <authtype>0</authtype>
                     <username/>
                     <password/>
@@ -1509,9 +1661,9 @@
                     <name>number of watches in zookeeper</name>
                     <type>0</type>
                     <snmp_community/>
+                    <multiplier>0</multiplier>
                     <snmp_oid/>
                     <key>ch_params[ZooKeeperWatch]</key>
-                    <multiplier>0</multiplier><delta>0</delta><formula>1</formula><delay_flex/><data_type>0</data_type>
                     <delay>30</delay>
                     <history>90</history>
                     <trends>365</trends>
@@ -1519,6 +1671,7 @@
                     <value_type>3</value_type>
                     <allowed_hosts/>
                     <units/>
+                    <delta>0</delta>
                     <snmpv3_contextname/>
                     <snmpv3_securityname/>
                     <snmpv3_securitylevel>0</snmpv3_securitylevel>
@@ -1526,8 +1679,11 @@
                     <snmpv3_authpassphrase/>
                     <snmpv3_privprotocol>0</snmpv3_privprotocol>
                     <snmpv3_privpassphrase/>
+                    <formula>1</formula>
+                    <delay_flex/>
                     <params/>
                     <ipmi_sensor/>
+                    <data_type>0</data_type>
                     <authtype>0</authtype>
                     <username/>
                     <password/>
