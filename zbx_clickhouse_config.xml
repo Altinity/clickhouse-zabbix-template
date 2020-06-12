@@ -369,12 +369,12 @@
 
     <!-- Uncomment if use part log.
          Part log contains information about all actions with parts in MergeTree tables (creation, deletion, merges, downloads).
+    -->
     <part_log>
         <database>system</database>
         <table>part_log</table>
         <flush_interval_milliseconds>7500</flush_interval_milliseconds>
     </part_log>
-    -->
 
     <!-- Uncomment to write text log into table.
          Text log contains all information from usual server log but stores it in structured and efficient way.
@@ -387,13 +387,13 @@
 
     <!-- Uncomment to write metric log into table.
          Metric log contains rows with current values of ProfileEvents, CurrentMetrics collected with "collect_interval_milliseconds" interval.
+    -->
     <metric_log>
         <database>system</database>
         <table>metric_log</table>
         <flush_interval_milliseconds>7500</flush_interval_milliseconds>
         <collect_interval_milliseconds>1000</collect_interval_milliseconds>
     </metric_log>
-    -->
 
     <!-- Parameters for embedded dictionaries, used in Yandex.Metrica.
          See https://clickhouse.yandex/docs/en/dicts/internal_dicts/
