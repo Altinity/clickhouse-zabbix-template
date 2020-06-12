@@ -9,16 +9,17 @@ RUN curl -o dockerize-linux-amd64-$DOCKERIZE_VERSION.tar.gz -sL https://github.c
 
 ENV ZBX_AGENT_VERSION=3.0
 ENV ZBX_AGENT_DISTRO=stretch
-RUN curl -o zabbix-release_${ZBX_AGENT_VERSION}-1+${ZBX_AGENT_DISTRO}_all.deb -sL https://repo.zabbix.com/zabbix/${ZBX_AGENT_VERSION}/debian/pool/main/z/zabbix-release/zabbix-release_${ZBX_AGENT_VERSION}-1+${ZBX_AGENT_DISTRO}_all.deb \
+ENV ZBX_AGENT_DEB_VERSION=3.0-2+${ZBX_AGENT_DISTRO}
+RUN curl -o zabbix-release_${ZBX_AGENT_DEB_VERSION}_all.deb -sL https://repo.zabbix.com/zabbix/${ZBX_AGENT_VERSION}/debian/pool/main/z/zabbix-release/zabbix-release_${ZBX_AGENT_DEB_VERSION}_all.deb \
   && apt-get update \
-  && apt-get install --no-install-recommends -y apt-transport-https ca-certificates software-properties-common curl unzip git libxml2-utils gnupg2 default-mysql-client inetutils-telnet inetutils-ping iproute2 less tcpdump dirmngr\
-  && dpkg -i zabbix-release_${ZBX_AGENT_VERSION}-1+${ZBX_AGENT_DISTRO}_all.deb \
+  && apt-get install --no-install-recommends -y apt-transport-https software-properties-common curl unzip git libxml2-utils gnupg2 default-mysql-client inetutils-telnet inetutils-ping iproute2 less tcpdump dirmngr\
+  && dpkg -i zabbix-release_${ZBX_AGENT_DEB_VERSION}_all.deb \
   && apt-key adv --keyserver keyserver.ubuntu.com --recv-keys E0C56BD4 \
   && add-apt-repository "deb http://repo.yandex.ru/clickhouse/deb/stable/ main/" \
   && apt-get update \
   && apt-get install --no-install-recommends -y zabbix-agent/stretch  \
   && apt-get install --no-install-recommends -y clickhouse-client \
-  && rm -rf zabbix-release_${ZBX_AGENT_VERSION}-1+${ZBX_AGENT_DISTRO}_all.deb \
+  && rm -rf zabbix-release_${ZBX_AGENT_DEB_VERSION}_all.deb \
   && apt-get clean && apt-get auto-remove \
   && rm -rf /var/lib/apt/lists/*
 
