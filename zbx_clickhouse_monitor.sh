@@ -65,7 +65,7 @@ function run_ch_query()
 	DATABASE="system"
 
 	SQL="SELECT value FROM ${DATABASE}.${TABLE} WHERE $COLUMN = '$METRIC'"
-	clickhouse-client -h "$CH_HOST" -d "$DATABASE" -q "$SQL" $(echo "$ADD_FLAGS")
+	clickhouse-client -h "$CH_HOST" -d "$DATABASE" -q "$SQL" $(echo "$ADD_FLAGS") 2>/dev/null
 }
 
 ##
@@ -151,9 +151,17 @@ case "$ITEM" in
 
 	MaxPartCountForPartition| \
 	ReplicasMaxAbsoluteDelay| \
-	ReplicasSumQueueSize	| \
-	Uptime			)
+	ReplicasSumQueueSize	)
 		run_ch_async_metric_command "$ITEM"
+		;;
+# see https://support.zabbix.com/browse/ZBXNEXT-1791, Zabbix 3.0 doesn't calculate nodata when item return "unsupported value type"
+	Uptime			)
+		UPTIME=$(run_ch_async_metric_command "$ITEM")
+		if [[ "" == "$UPTIME" ]]; then
+		  echo 0
+		else
+		  echo $UPTIME
+		fi
 		;;
 
 	InsertedBytes		| \

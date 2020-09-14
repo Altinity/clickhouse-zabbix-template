@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <zabbix_export>
     <version>3.0</version>
-    <date>2020-06-12T08:54:32Z</date>
+    <date>2020-09-14T07:35:28Z</date>
     <groups>
         <group>
             <name>Clickhouse servers</name>
@@ -1974,7 +1974,7 @@
     </templates>
     <triggers>
         <trigger>
-            <expression>{Clickhouse:ch_params[Uptime].nodata(3m)}</expression>
+            <expression>{Clickhouse:ch_params[Uptime].last()} = 0</expression>
             <name>{HOST.HOST} clickhouse-server monitoring have no data, possible clickhouse-server is down, check `systemd status clickhouse-server` and check zbx_clickhouse_monitor.sh and `systemd status zabbix-agent`</name>
             <url/>
             <status>0</status>
@@ -1984,7 +1984,8 @@
             <dependencies/>
         </trigger>
         <trigger>
-            <expression>{Clickhouse:ch_params[Uptime].last()} &lt;= 600</expression>
+            <expression>{Clickhouse:ch_params[Uptime].last()} &lt;= 600 and&#13;
+{Clickhouse:ch_params[Uptime].last()} &gt; 0</expression>
             <name>{HOST.HOST} clickhouse-server recently restated</name>
             <url/>
             <status>0</status>
