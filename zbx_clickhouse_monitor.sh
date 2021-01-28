@@ -46,7 +46,7 @@ fi
 # Usually it is /var/lib/clickhouse
 CH_PATH="$(xmllint --xpath 'string(/yandex/path)' /etc/clickhouse-server/config.xml)"
 if [ "$?" -ne 0 ]; then
-	echo "Something went wrong with parsing ClickHouse config. Is xmllist installed? Is ClickHouse config available?"
+	echo "Something went wrong with parsing ClickHouse config. Is xmllint installed? Is ClickHouse config available?"
 	exit 1
 fi 
 
