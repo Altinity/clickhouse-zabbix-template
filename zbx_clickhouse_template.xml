@@ -2001,7 +2001,7 @@
             <expression>{Clickhouse:ch_params[Uptime].last()} &lt;= 600</expression>
             <recovery_mode>0</recovery_mode>
             <recovery_expression/>
-            <name>{HOST.HOST} clickhouse-server recently restated</name>
+            <name>{HOST.HOST} clickhouse-server recently restarted</name>
             <correlation_mode>0</correlation_mode>
             <correlation_tag/>
             <url/>
