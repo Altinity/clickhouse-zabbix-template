@@ -29,13 +29,13 @@ fi
 # Collect additional parameters if available. Get last argument if args count > 2.
 # IMPORTANT Middle agruments are skipped for simplicity
 if [ $# -gt 2 ]; then
-	ADD_FLAGS="${*:3}"
+	ADD_FLAGS="${*:-1}"
 else
 	ADD_FLAGS=""
 fi
 
 # Ensure xmllint is available
-if ! command -v xmllint &>/dev/null; then
+if ! command -v xmllint >/dev/null 2>&1; then
 	echo "Looks like xmllint is not available. Please install it."
 	exit 1
 fi
@@ -63,7 +63,7 @@ function run_ch_query()
 	DATABASE="system"
 
 	SQL="SELECT value FROM ${DATABASE}.${TABLE} WHERE $COLUMN = '$METRIC'"
-	clickhouse-client -h "$CH_HOST" -d "$DATABASE" -q "$SQL" $ADD_FLAGS
+	clickhouse-client -h "$CH_HOST" -d "$DATABASE" -q "$SQL" "$ADD_FLAGS"
 }
 
 ##
@@ -116,7 +116,7 @@ function run_ch_event_command_zeropad()
 
 case "$ITEM" in
 	DiskUsage)
-		clickhouse client -h "$CH_HOST" $ADD_FLAGS -q 'SELECT total_space,free_space FROM system.disks;'| awk '{printf($1 - $2)}'
+		clickhouse client -h "$CH_HOST" -q 'SELECT total_space,free_space FROM system.disks;' "$ADD_FLAGS"| awk '{printf($1 - $2)}'
 		;;
 
 	Revision)
