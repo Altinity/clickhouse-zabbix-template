@@ -29,7 +29,7 @@ fi
 # Collect additional parameters if available. Get last argument if args count > 2.
 # IMPORTANT Middle agruments are skipped for simplicity
 if [ $# -gt 2 ]; then
-	ADD_FLAGS="${*:2}"
+	ADD_FLAGS="${*:3}"
 else
 	ADD_FLAGS=""
 fi
@@ -63,7 +63,7 @@ function run_ch_query()
 	DATABASE="system"
 
 	SQL="SELECT value FROM ${DATABASE}.${TABLE} WHERE $COLUMN = '$METRIC'"
-	clickhouse-client -h "$CH_HOST" -d "$DATABASE" -q "$SQL" "$ADD_FLAGS"
+	clickhouse-client -h "$CH_HOST" -d "$DATABASE" -q "$SQL" $ADD_FLAGS
 }
 
 ##
