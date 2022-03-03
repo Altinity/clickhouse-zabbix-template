@@ -1,4 +1,4 @@
-#!/bin/bash
+#!/bin/sh
 #
 # Yandex ClickHouse Zabbix template
 #
@@ -35,7 +35,7 @@ else
 fi
 
 # Ensure xmllint is available
-if ! which xmllint; then
+if ! command -v xmllint &>/dev/null; then
 	echo "Looks like xmllint is not available. Please install it."
 	exit 1
 fi
