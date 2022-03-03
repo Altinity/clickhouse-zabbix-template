@@ -6,7 +6,6 @@
 # Copyright (C) Altinity Ltd
 
 
-
 # Default host where ClickHouse is expected to be available
 # You may want to change this for your installation
 CH_HOST="${2:-localhost}"
@@ -20,7 +19,7 @@ function usage()
 }
 
 # Command to execute
-ITEM="$1"
+ITEM=$1
 if [ -z "$ITEM" ]; then
 	echo "Provide command to run"
 	usage
@@ -30,14 +29,13 @@ fi
 # Collect additional parameters if available. Get last argument if args count > 2.
 # IMPORTANT Middle agruments are skipped for simplicity
 if [ $# -gt 2 ]; then
-	ADD_FLAGS="${@: -1}"
+	ADD_FLAGS="${*:2}"
 else
 	ADD_FLAGS=""
 fi
 
 # Ensure xmllint is available
-xmllint="$(which xmllint)"
-if [ "$?" -ne 0 ]; then
+if ! which xmllint; then
 	echo "Looks like xmllint is not available. Please install it."
 	exit 1
 fi
@@ -65,7 +63,7 @@ function run_ch_query()
 	DATABASE="system"
 
 	SQL="SELECT value FROM ${DATABASE}.${TABLE} WHERE $COLUMN = '$METRIC'"
-	clickhouse-client -h "$CH_HOST" -d "$DATABASE" -q "$SQL" $(echo "$ADD_FLAGS")
+	clickhouse-client -h "$CH_HOST" -d "$DATABASE" -q "$SQL" "$ADD_FLAGS"
 }
 
 ##
@@ -102,7 +100,7 @@ function run_ch_process_command()
 {
 	DATABASE="system"
 	SQL="SELECT elapsed FROM processes"
-	clickhouse-client -h "$CH_HOST" -d "$DATABASE" -q "$SQL" $(echo "$ADD_FLAGS")
+	clickhouse-client -h "$CH_HOST" -d "$DATABASE" -q "$SQL" "$ADD_FLAGS"
 }
 
 ##
@@ -111,7 +109,7 @@ function run_ch_process_command()
 function run_ch_event_command_zeropad()
 {
 	# $1 - metric name to fetch
-	res=`run_ch_query 'events' 'event' $1`
+	res=$(run_ch_query 'events' 'event' $1)
 	[ -n "$res" ] || res=0
 	echo "$res"
 }
@@ -122,7 +120,7 @@ case "$ITEM" in
 		;;
 
 	Revision)
-		cat  "$CH_PATH/status" | grep Revision | awk '{print $2}'
+		grep Revision "$CH_PATH/status" | awk '{print $2}'
 		;;
 
 	LongestRunningQuery)
