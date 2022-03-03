@@ -116,7 +116,7 @@ function run_ch_event_command_zeropad()
 
 case "$ITEM" in
 	DiskUsage)
-		clickhouse client -h "$CH_HOST" -q 'SELECT total_space,free_space FROM system.disks;' | awk '{printf($1 - $2)}'
+		clickhouse client -h "$CH_HOST" $ADD_FLAGS -q 'SELECT total_space,free_space FROM system.disks;'| awk '{printf($1 - $2)}'
 		;;
 
 	Revision)
