@@ -27,7 +27,7 @@ if [ -z "$ITEM" ]; then
 	exit 1
 fi
 
-# Collect additional parameters if available. Get last argument if args count > 2. 
+# Collect additional parameters if available. Get last argument if args count > 2.
 # IMPORTANT Middle agruments are skipped for simplicity
 if [ $# -gt 2 ]; then
 	ADD_FLAGS="${@: -1}"
@@ -48,7 +48,7 @@ CH_PATH="$(xmllint --xpath 'string(/yandex/path)' /etc/clickhouse-server/config.
 if [ "$?" -ne 0 ]; then
 	echo "Something went wrong with parsing ClickHouse config. Is xmllint installed? Is ClickHouse config available?"
 	exit 1
-fi 
+fi
 
 ##
 ## Run ClickHouse monitoring query
@@ -118,7 +118,7 @@ function run_ch_event_command_zeropad()
 
 case "$ITEM" in
 	DiskUsage)
-		du -sb "$CH_PATH" | awk '{print $1}'
+		clickhouse client -h "$CH_HOST" -q 'SELECT total_space,free_space FROM system.disks;' | awk '{printf($1 - $2)}'
 		;;
 
 	Revision)
@@ -184,4 +184,3 @@ case "$ITEM" in
 		exit 1
 		;;
 esac
-
