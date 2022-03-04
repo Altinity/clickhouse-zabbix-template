@@ -6,7 +6,6 @@
 # Copyright (C) Altinity Ltd
 
 
-
 # Default host where ClickHouse is expected to be available
 # You may want to change this for your installation
 CH_HOST="${2:-localhost}"
@@ -20,24 +19,23 @@ function usage()
 }
 
 # Command to execute
-ITEM="$1"
+ITEM=$1
 if [ -z "$ITEM" ]; then
 	echo "Provide command to run"
 	usage
 	exit 1
 fi
 
-# Collect additional parameters if available. Get last argument if args count > 2. 
+# Collect additional parameters if available. Get last argument if args count > 2.
 # IMPORTANT Middle agruments are skipped for simplicity
 if [ $# -gt 2 ]; then
-	ADD_FLAGS="${@: -1}"
+	ADD_FLAGS="${*:3}"
 else
 	ADD_FLAGS=""
 fi
 
 # Ensure xmllint is available
-xmllint="$(which xmllint)"
-if [ "$?" -ne 0 ]; then
+if ! command -v xmllint >/dev/null 2>&1; then
 	echo "Looks like xmllint is not available. Please install it."
 	exit 1
 fi
@@ -48,7 +46,7 @@ CH_PATH="$(xmllint --xpath 'string(/yandex/path)' /etc/clickhouse-server/config.
 if [ "$?" -ne 0 ]; then
 	echo "Something went wrong with parsing ClickHouse config. Is xmllint installed? Is ClickHouse config available?"
 	exit 1
-fi 
+fi
 
 ##
 ## Run ClickHouse monitoring query
@@ -65,7 +63,7 @@ function run_ch_query()
 	DATABASE="system"
 
 	SQL="SELECT value FROM ${DATABASE}.${TABLE} WHERE $COLUMN = '$METRIC'"
-	clickhouse-client -h "$CH_HOST" -d "$DATABASE" -q "$SQL" $(echo "$ADD_FLAGS")
+	clickhouse-client -h "$CH_HOST" -d "$DATABASE" -q "$SQL" $ADD_FLAGS
 }
 
 ##
@@ -102,7 +100,7 @@ function run_ch_process_command()
 {
 	DATABASE="system"
 	SQL="SELECT elapsed FROM processes"
-	clickhouse-client -h "$CH_HOST" -d "$DATABASE" -q "$SQL" $(echo "$ADD_FLAGS")
+	clickhouse-client -h "$CH_HOST" -d "$DATABASE" -q "$SQL" $ADD_FLAGS
 }
 
 ##
@@ -111,18 +109,18 @@ function run_ch_process_command()
 function run_ch_event_command_zeropad()
 {
 	# $1 - metric name to fetch
-	res=`run_ch_query 'events' 'event' $1`
+	res=$(run_ch_query 'events' 'event' $1)
 	[ -n "$res" ] || res=0
 	echo "$res"
 }
 
 case "$ITEM" in
 	DiskUsage)
-		du -sb "$CH_PATH" | awk '{print $1}'
+		clickhouse client -h "$CH_HOST" -q 'SELECT total_space,free_space FROM system.disks;' $ADD_FLAGS| awk '{printf($1 - $2)}'
 		;;
 
 	Revision)
-		cat  "$CH_PATH/status" | grep Revision | awk '{print $2}'
+		grep Revision "$CH_PATH/status" | awk '{print $2}'
 		;;
 
 	LongestRunningQuery)
@@ -184,4 +182,3 @@ case "$ITEM" in
 		exit 1
 		;;
 esac
-
